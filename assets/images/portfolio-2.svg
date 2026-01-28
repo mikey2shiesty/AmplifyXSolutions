@@ -1,0 +1,67 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f0ff"/>
+      <stop offset="100%" style="stop-color:#ede4ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#bg2)"/>
+
+  <!-- Dashboard Container -->
+  <rect x="50" y="50" width="700" height="500" rx="20" fill="#ffffff" style="filter: drop-shadow(0 10px 40px rgba(0,0,0,0.1))"/>
+
+  <!-- Sidebar -->
+  <rect x="50" y="50" width="180" height="500" rx="20" fill="#f8f5ff"/>
+  <rect x="70" y="80" width="100" height="35" rx="8" fill="#8B5CF6"/>
+  <rect x="70" y="140" width="140" height="30" rx="6" fill="#ede4ff"/>
+  <rect x="70" y="180" width="140" height="30" rx="6" fill="transparent" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="70" y="220" width="140" height="30" rx="6" fill="#ede4ff"/>
+  <rect x="70" y="260" width="140" height="30" rx="6" fill="#ede4ff"/>
+  <rect x="70" y="300" width="140" height="30" rx="6" fill="#ede4ff"/>
+
+  <!-- Main Content -->
+  <!-- Header -->
+  <rect x="250" y="70" width="200" height="30" rx="4" fill="#1a1a2e"/>
+  <circle cx="700" cy="85" r="20" fill="#ede4ff"/>
+
+  <!-- Stats Cards -->
+  <rect x="250" y="120" width="150" height="100" rx="12" fill="#8B5CF6"/>
+  <text x="270" y="160" fill="#ffffff" font-family="Arial" font-size="28" font-weight="bold">$521,652</text>
+  <text x="270" y="190" fill="#ffffff" fill-opacity="0.7" font-family="Arial" font-size="12">Monthly Profit</text>
+  <rect x="270" y="200" width="80" height="6" rx="3" fill="#ffffff" fill-opacity="0.3"/>
+  <rect x="270" y="200" width="50" height="6" rx="3" fill="#C8FF00"/>
+
+  <rect x="420" y="120" width="150" height="100" rx="12" fill="#ffffff" stroke="#ede4ff" stroke-width="2"/>
+  <text x="440" y="160" fill="#1a1a2e" font-family="Arial" font-size="28" font-weight="bold">$14,225</text>
+  <text x="440" y="190" fill="#737373" font-family="Arial" font-size="12">Weekly Returns</text>
+
+  <rect x="590" y="120" width="140" height="100" rx="12" fill="#ffffff" stroke="#ede4ff" stroke-width="2"/>
+  <text x="610" y="160" fill="#1a1a2e" font-family="Arial" font-size="16" font-weight="bold">Expenses</text>
+  <rect x="610" y="175" width="100" height="30" rx="4" fill="#C8FF00" fill-opacity="0.2"/>
+
+  <!-- Chart Area -->
+  <rect x="250" y="240" width="320" height="180" rx="12" fill="#ffffff" stroke="#ede4ff" stroke-width="2"/>
+  <text x="270" y="270" fill="#1a1a2e" font-family="Arial" font-size="14" font-weight="bold">Total Distributions</text>
+
+  <!-- Chart Line -->
+  <path d="M280 380 Q320 350 360 360 Q400 370 440 340 Q480 310 520 350" stroke="#8B5CF6" stroke-width="3" fill="none"/>
+  <path d="M280 380 Q320 350 360 360 Q400 370 440 340 Q480 310 520 350 L520 400 L280 400 Z" fill="#8B5CF6" fill-opacity="0.1"/>
+
+  <!-- Property List -->
+  <rect x="590" y="240" width="140" height="180" rx="12" fill="#ffffff" stroke="#ede4ff" stroke-width="2"/>
+  <text x="605" y="265" fill="#1a1a2e" font-family="Arial" font-size="12" font-weight="bold">My Portfolio</text>
+
+  <rect x="600" y="280" width="120" height="35" rx="6" fill="#f8f5ff"/>
+  <rect x="600" y="325" width="120" height="35" rx="6" fill="#f8f5ff"/>
+  <rect x="600" y="370" width="120" height="35" rx="6" fill="#f8f5ff"/>
+
+  <!-- Bottom Cards -->
+  <rect x="250" y="440" width="220" height="90" rx="12" fill="#ffffff" stroke="#ede4ff" stroke-width="2"/>
+  <rect x="270" y="460" width="50" height="50" rx="8" fill="#ede4ff"/>
+  <rect x="335" y="465" width="100" height="14" rx="2" fill="#1a1a2e"/>
+  <rect x="335" y="485" width="70" height="10" rx="2" fill="#737373"/>
+  <text x="335" y="515" fill="#C8FF00" font-family="Arial" font-size="14" font-weight="bold">+12%</text>
+
+  <rect x="490" y="440" width="240" height="90" rx="12" fill="#ffffff" stroke="#ede4ff" stroke-width="2"/>
+</svg>

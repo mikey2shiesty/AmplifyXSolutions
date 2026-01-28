@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AmplifyX Solutions - We build high-performing real estate websites that generate leads, showcase properties, and attract serious buyers & investors.">
+    <meta name="keywords" content="real estate website, property website design, real estate web development, IDX integration, lead generation">
+    <meta name="author" content="AmplifyX Solutions">
+
+    <title>AmplifyX Solutions | Premium Real Estate Web Development</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">AX</div>
+            <div class="loader-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="assets/images/logo.png" alt="AmplifyX Solutions" class="logo-img">
+            </a>
+
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#process" class="nav-link">Our Process</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Support <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <a href="#portfolio" class="btn btn-primary header-cta">
+                <span>Our Projects</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">We Build High-</span>
+                            <span class="title-line">Performing</span>
+                            <span class="title-line">Real Estate</span>
+                            <span class="title-line">Websites</span>
+                        </h1>
+
+                        <div class="hero-info">
+                            <div class="hero-badge">
+                                <span class="badge-line"></span>
+                                <h2>Real Estate Web Experts</h2>
+                            </div>
+                            <p class="hero-description">We help real estate businesses stand out online with sleek, high-performing websites that generate leads, showcase properties, and attract serious buyers & investors.</p>
+                            <a href="#services" class="btn-circle">
+                                <span>View</span>
+                                <span>Services</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-visual">
+                        <div class="hero-image">
+                            <img src="assets/images/hero-illustration.svg" alt="Real Estate Analytics">
+                        </div>
+                        <div class="hero-float hero-float-1">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="hero-float hero-float-2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 20V10M18 20V4M6 20V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-scroll">
+                    <a href="#marquee" class="scroll-indicator">
+                        <span class="scroll-dot"></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marquee Section -->
+        <section class="marquee" id="marquee">
+            <div class="marquee-track">
+                <div class="marquee-content">
+                    <span class="marquee-item"><span class="star">&#9733;</span> Agency Branding</span>
+                    <span class="marquee-item"><span class="star">&#9733;</span> Custom Web Design</span>
+                    <span class="marquee-item"><span class="star">&#9733;</span> IDX/MLS Integration</span>
+                    <span class="marquee-item"><span class="star">&#9733;</span> Lead Generation</span>
+                    <span class="marquee-item"><span class="star">&#9733;</span> Agency Branding</span>
+                    <span class="marquee-item"><span class="star">&#9733;</span> Custom Web Design</span>
+                    <span class="marquee-item"><span class="star">&#9733;</span> IDX/MLS Integration</span>
+                    <span class="marquee-item"><span class="star">&#9733;</span> Lead Generation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">About Us</span>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>View More</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-visual">
+                        <div class="globe-container">
+                            <div class="globe"></div>
+                        </div>
+                    </div>
+
+                    <blockquote class="about-quote">
+                        <p>"At AmplifyX Solutions, we specialise in high-performance websites for real estate professionals. Focused on innovation, user experience, and lead generation, we help agencies, property managers, and developers grow their digital presence. With expertise in branding, property listings, and real estate SEO, we ensure your website stands out in a competitive market."</p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-header section-header-light">
+                    <span class="section-label">Our Services</span>
+                    <a href="#contact" class="btn btn-outline btn-outline-light">
+                        <span>View More</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+
+                <div class="services-list">
+                    <div class="service-item service-highlight">
+                        <div class="service-content">
+                            <h3 class="service-title">Property<br>Branding</h3>
+                            <p class="service-desc">Elevating your agency's brand with sleek, custom designs and strategic messaging to attract buyers and sellers.</p>
+                        </div>
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 22V12H15V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3 class="service-title">Website<br>Design</h3>
+                            <p class="service-desc">Innovative, mobile-responsive websites with intuitive layouts that showcase properties and captivate clients.</p>
+                        </div>
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M16 18L22 12L16 6M8 6L2 12L8 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3 class="service-title">Real Estate<br>Development</h3>
+                            <p class="service-desc">Building dynamic, feature-rich real estate platforms with integrated property listings, search filters, and lead generation tools.</p>
+                        </div>
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/><path d="M8 21H16M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-content">
+                            <h3 class="service-title">SEO for<br>Real Estate</h3>
+                            <p class="service-desc">Optimising your site to rank higher in search results, helping you get maximum visibility and engagement.</p>
+                        </div>
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Our Process</span>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <div class="process-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9.66347 17H14.3364M12 3V4M18.364 5.63604L17.6569 6.34315M21 12H20M4 12H3M6.34309 6.34315L5.63599 5.63604M8.46441 15.5356C6.51179 13.5829 6.51179 10.4171 8.46441 8.46449C10.417 6.51187 13.5829 6.51187 15.5355 8.46449C17.4881 10.4171 17.4881 13.5829 15.5355 15.5356L14.9884 16.0827C14.3555 16.7155 13.9999 17.5739 13.9999 18.469V19C13.9999 20.1046 13.1045 21 11.9999 21C10.8954 21 9.99995 20.1046 9.99995 19V18.469C9.99995 17.5739 9.6444 16.7155 9.01151 16.0827L8.46441 15.5356Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <span class="process-number">01</span>
+                        <h3 class="process-title">Consultation & Discovery</h3>
+                        <p class="process-desc">Understand your agency's unique needs and goals to deliver customised solutions.</p>
+                        <div class="process-tags">
+                            <span class="tag">Competitor Research</span>
+                            <span class="tag">Set Project Goals</span>
+                        </div>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 19L19 12L22 15L15 22L12 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 13L16.5 5.5L2 2L5.5 16.5L13 18L18 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 2L9.586 9.586" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="2" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <span class="process-number">02</span>
+                        <h3 class="process-title">Design & Development</h3>
+                        <p class="process-desc">Craft tailored, high-performance websites that showcase properties.</p>
+                        <div class="process-tags">
+                            <span class="tag">Feature Setup</span>
+                            <span class="tag">Custom Build</span>
+                        </div>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14.7519 11.1679L11.5547 9.03647C10.8901 8.59343 10 9.06982 10 9.86852V14.1315C10 14.9302 10.8901 15.4066 11.5547 14.9635L14.7519 12.8321C15.3457 12.4362 15.3457 11.5638 14.7519 11.1679Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+                        </div>
+                        <span class="process-number">03</span>
+                        <h3 class="process-title">Testing & Refinement</h3>
+                        <p class="process-desc">Ensure flawless performance with thorough testing.</p>
+                        <div class="process-tags">
+                            <span class="tag">Lead Checks</span>
+                            <span class="tag">UX Review</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-nav">
+                    <button class="process-arrow process-prev" aria-label="Previous">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15.8334 10H4.16675M4.16675 10L10.0001 4.16667M4.16675 10L10.0001 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="process-arrow process-next" aria-label="Next">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4.16675 10H15.8334M15.8334 10L10.0001 4.16667M15.8334 10L10.0001 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Our Projects</span>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>All Projects</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+
+                <div class="portfolio-grid">
+                    <div class="portfolio-item portfolio-item-large">
+                        <div class="portfolio-image">
+                            <img src="assets/images/portfolio-1.svg" alt="Urban Property Listings Portal">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Urban Property Listings Portal</h3>
+                            <p class="portfolio-desc">An engaging platform with dynamic search tools, modern UI, and clear call-to-actions for lead generation.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="assets/images/portfolio-2.svg" alt="Real Estate Investment Dashboard">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">Real Estate Investment Dashboard</h3>
+                            <p class="portfolio-desc">A visually-driven dashboard crafted to manage property portfolios, track ROI, and display key analytics.</p>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item">
+                        <div class="portfolio-image">
+                            <img src="assets/images/portfolio-3.svg" alt="AI-Driven Real Estate Platform">
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3 class="portfolio-title">AI-Driven Real Estate Platform</h3>
+                            <p class="portfolio-desc">A powerful dark-mode interface with AI features, lead automation, and advanced search functionality.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing" id="pricing">
+            <div class="container">
+                <div class="section-header section-header-center">
+                    <h2 class="pricing-heading">Our Pricing & Plans</h2>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Starter Site</h3>
+                        <p class="pricing-subtitle">Perfect for solo agents ready to establish a clean and professional online presence.</p>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Landing Page Website
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Responsive Mobile Design
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Basic SEO Setup
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                CMS Integration
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                2 Weeks of Support
+                            </li>
+                        </ul>
+                        <div class="pricing-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$2,500</span>
+                            <span class="price-currency">AUD</span>
+                        </div>
+                        <p class="pricing-note">Perfect for independent agents & startups</p>
+                        <a href="#contact" class="btn btn-outline btn-block">
+                            <span>Enquire Now</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="pricing-card pricing-card-featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <h3 class="pricing-title">Professional Site</h3>
+                        <p class="pricing-subtitle">Ideal for growing agencies scaling with smart tools.</p>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Multi-Page Website
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Property Listings Integration
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Advanced SEO & Analytics
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Lead Capture Forms
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                1 Month of Support
+                            </li>
+                        </ul>
+                        <div class="pricing-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$5,500</span>
+                            <span class="price-currency">AUD</span>
+                        </div>
+                        <p class="pricing-note">Ideal for growing real estate agencies</p>
+                        <a href="#contact" class="btn btn-primary btn-block">
+                            <span>Enquire Now</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="pricing-card">
+                        <h3 class="pricing-title">Real Estate Elite</h3>
+                        <p class="pricing-subtitle">Built for elite agencies using cutting-edge tech.</p>
+                        <ul class="pricing-features">
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Custom Web Application
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                IDX/MLS Integration
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                CRM & Automation Setup
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Priority Support
+                            </li>
+                            <li>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                3 Months of Support
+                            </li>
+                        </ul>
+                        <div class="pricing-price">
+                            <span class="price-from">From</span>
+                            <span class="price-amount">$12,000</span>
+                            <span class="price-currency">AUD</span>
+                        </div>
+                        <p class="pricing-note">For enterprise-level real estate businesses</p>
+                        <a href="#contact" class="btn btn-outline btn-block">
+                            <span>Enquire Now</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta" id="contact">
+            <div class="cta-bg"></div>
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Grow Your Real Estate Business—<br>Let's Connect!</h2>
+                    <p class="cta-desc">Discover how we can create high-performance websites tailored for real estate professionals, helping you generate leads, attract buyers, and scale your business online.</p>
+                    <form class="cta-form" id="ctaForm">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email address" required>
+                            <button type="submit" class="btn btn-primary">
+                                <span>Get Started Today</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">
+                        <img src="assets/images/logo-white.png" alt="AmplifyX Solutions">
+                    </a>
+                    <p class="footer-tagline">Building high-performance real estate websites that attract buyers, generate leads, and elevate your online presence.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Stay informed with our newsletter for the latest updates and insights.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="form-group">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3.33337 3.33333H16.6667C17.5834 3.33333 18.3334 4.08333 18.3334 5V15C18.3334 15.9167 17.5834 16.6667 16.6667 16.6667H3.33337C2.41671 16.6667 1.66671 15.9167 1.66671 15V5C1.66671 4.08333 2.41671 3.33333 3.33337 3.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.3334 5L10 10.8333L1.66671 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" aria-label="Subscribe">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18.3334 1.66667L9.16671 10.8333M18.3334 1.66667L12.5 18.3333L9.16671 10.8333M18.3334 1.66667L1.66671 7.5L9.16671 10.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="5.5" r="1" fill="currentColor"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 1.66667H12.5C11.395 1.66667 10.3352 2.10566 9.55376 2.88706C8.77236 3.66846 8.33337 4.72827 8.33337 5.83334V8.33334H5.83337V11.6667H8.33337V18.3333H11.6667V11.6667H14.1667L15 8.33334H11.6667V5.83334C11.6667 5.61233 11.7545 5.40037 11.9108 5.24409C12.0671 5.08781 12.279 5.00001 12.5 5.00001H15V1.66667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Copyright 2024 <strong>AmplifyX Solutions</strong> - All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
