@@ -287,16 +287,26 @@ const Forms = {
         const form = document.getElementById('ctaForm');
         if (!form) return;
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const email = form.querySelector('input[type="email"]').value;
+            const formData = new FormData(form);
 
-            // Here you would typically send this to your backend
-            console.log('CTA Form submitted:', email);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
 
-            // Show success feedback
-            this.showSuccess(form, 'Thanks! We\'ll be in touch soon.');
-            form.reset();
+                if (response.ok) {
+                    this.showSuccess(form, 'Thanks! We\'ll be in touch soon.');
+                    form.reset();
+                } else {
+                    this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
+            }
         });
     },
 
@@ -304,16 +314,26 @@ const Forms = {
         const form = document.getElementById('newsletterForm');
         if (!form) return;
 
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const email = form.querySelector('input[type="email"]').value;
+            const formData = new FormData(form);
 
-            // Here you would typically send this to your backend
-            console.log('Newsletter Form submitted:', email);
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
 
-            // Show success feedback
-            this.showSuccess(form, 'You\'re subscribed!');
-            form.reset();
+                if (response.ok) {
+                    this.showSuccess(form, 'You\'re subscribed!');
+                    form.reset();
+                } else {
+                    this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
+            }
         });
     },
 
