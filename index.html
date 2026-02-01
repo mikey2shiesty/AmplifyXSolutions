@@ -283,42 +283,252 @@
             <div class="container">
                 <div class="section-header">
                     <span class="section-label">Our Projects</span>
-                    <a href="#contact" class="btn btn-outline">
-                        <span>All Projects</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    <div class="slideshow-nav">
+                        <button class="slideshow-btn slideshow-prev" aria-label="Previous project">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <button class="slideshow-btn slideshow-next" aria-label="Next project">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="portfolio-grid">
-                    <div class="portfolio-item portfolio-item-large">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-1.svg" alt="Urban Property Listings Portal">
+                <div class="slideshow-container">
+                    <!-- Slide 1: Property Listings Portal -->
+                    <div class="slideshow-slide active">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="browser-url">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/><path d="M2 12H22" stroke="currentColor" stroke-width="2"/><path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" stroke-width="2"/></svg>
+                                    <span>luxuryhomessydney.com.au</span>
+                                </div>
+                            </div>
+                            <div class="browser-content">
+                                <!-- Property Listings Website Mockup -->
+                                <div class="mockup-website mockup-listings">
+                                    <nav class="mockup-nav">
+                                        <div class="mockup-logo">LuxuryHomes</div>
+                                        <div class="mockup-nav-links">
+                                            <span>Buy</span>
+                                            <span>Sell</span>
+                                            <span>Rent</span>
+                                            <span>Agents</span>
+                                        </div>
+                                        <div class="mockup-cta-btn">List Property</div>
+                                    </nav>
+                                    <div class="mockup-hero">
+                                        <h1>Find Your<br><span class="highlight">Dream Home</span></h1>
+                                        <div class="mockup-search-bar">
+                                            <div class="search-input">Sydney, NSW</div>
+                                            <div class="search-filters">
+                                                <span>3+ Beds</span>
+                                                <span>$1M - $3M</span>
+                                            </div>
+                                            <div class="search-btn">Search</div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-listings-grid">
+                                        <div class="mockup-property">
+                                            <div class="property-img" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);"></div>
+                                            <div class="property-info">
+                                                <div class="property-price">$2,450,000</div>
+                                                <div class="property-address">42 Harbour View, Bondi</div>
+                                                <div class="property-specs">4 bed · 3 bath · 2 car</div>
+                                            </div>
+                                        </div>
+                                        <div class="mockup-property">
+                                            <div class="property-img" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);"></div>
+                                            <div class="property-info">
+                                                <div class="property-price">$1,890,000</div>
+                                                <div class="property-address">18 Ocean St, Manly</div>
+                                                <div class="property-specs">3 bed · 2 bath · 1 car</div>
+                                            </div>
+                                        </div>
+                                        <div class="mockup-property">
+                                            <div class="property-img" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);"></div>
+                                            <div class="property-info">
+                                                <div class="property-price">$3,200,000</div>
+                                                <div class="property-address">7 Park Lane, Mosman</div>
+                                                <div class="property-specs">5 bed · 4 bath · 3 car</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">Urban Property Listings Portal</h3>
-                            <p class="portfolio-desc">An engaging platform with dynamic search tools, modern UI, and clear call-to-actions for lead generation.</p>
+                        <div class="slide-info">
+                            <h3>Luxury Property Portal</h3>
+                            <p>Full-featured listings platform with advanced search, IDX integration, and lead capture forms.</p>
                         </div>
                     </div>
 
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-2.svg" alt="Real Estate Investment Dashboard">
+                    <!-- Slide 2: Investment Dashboard -->
+                    <div class="slideshow-slide">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="browser-url">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/><path d="M2 12H22" stroke="currentColor" stroke-width="2"/><path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" stroke-width="2"/></svg>
+                                    <span>investorpro.dashboard</span>
+                                </div>
+                            </div>
+                            <div class="browser-content browser-content-light">
+                                <!-- Investment Dashboard Mockup -->
+                                <div class="mockup-website mockup-dashboard">
+                                    <div class="dashboard-sidebar">
+                                        <div class="sidebar-logo">InvestorPro</div>
+                                        <div class="sidebar-menu">
+                                            <div class="menu-item active">
+                                                <span class="menu-icon">◉</span> Dashboard
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-icon">◎</span> Properties
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-icon">◎</span> Analytics
+                                            </div>
+                                            <div class="menu-item">
+                                                <span class="menu-icon">◎</span> Reports
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-main">
+                                        <div class="dashboard-header">
+                                            <h2>Portfolio Overview</h2>
+                                            <div class="header-date">Jan 2025</div>
+                                        </div>
+                                        <div class="dashboard-stats">
+                                            <div class="stat-card stat-green">
+                                                <div class="stat-value">$4.2M</div>
+                                                <div class="stat-label">Total Value</div>
+                                                <div class="stat-change">+12.4%</div>
+                                            </div>
+                                            <div class="stat-card">
+                                                <div class="stat-value">$28,400</div>
+                                                <div class="stat-label">Monthly Income</div>
+                                                <div class="stat-change">+8.2%</div>
+                                            </div>
+                                            <div class="stat-card">
+                                                <div class="stat-value">7</div>
+                                                <div class="stat-label">Properties</div>
+                                            </div>
+                                            <div class="stat-card">
+                                                <div class="stat-value">6.8%</div>
+                                                <div class="stat-label">Avg Yield</div>
+                                            </div>
+                                        </div>
+                                        <div class="dashboard-chart">
+                                            <div class="chart-title">Revenue Trend</div>
+                                            <div class="chart-bars">
+                                                <div class="bar" style="height: 45%;"></div>
+                                                <div class="bar" style="height: 60%;"></div>
+                                                <div class="bar" style="height: 55%;"></div>
+                                                <div class="bar" style="height: 70%;"></div>
+                                                <div class="bar" style="height: 65%;"></div>
+                                                <div class="bar" style="height: 85%;"></div>
+                                                <div class="bar active" style="height: 95%;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">Real Estate Investment Dashboard</h3>
-                            <p class="portfolio-desc">A visually-driven dashboard crafted to manage property portfolios, track ROI, and display key analytics.</p>
+                        <div class="slide-info">
+                            <h3>Investment Dashboard</h3>
+                            <p>Real-time portfolio tracking with ROI analytics, rental income monitoring, and performance reports.</p>
                         </div>
                     </div>
 
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <img src="assets/images/portfolio-3.svg" alt="AI-Driven Real Estate Platform">
+                    <!-- Slide 3: Agent CRM Platform -->
+                    <div class="slideshow-slide">
+                        <div class="browser-mockup">
+                            <div class="browser-header browser-header-dark">
+                                <div class="browser-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="browser-url">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/><path d="M2 12H22" stroke="currentColor" stroke-width="2"/><path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" stroke-width="2"/></svg>
+                                    <span>agentflow.app/crm</span>
+                                </div>
+                            </div>
+                            <div class="browser-content browser-content-dark">
+                                <!-- Agent CRM Mockup -->
+                                <div class="mockup-website mockup-crm">
+                                    <div class="crm-header">
+                                        <div class="crm-logo">AgentFlow</div>
+                                        <div class="crm-tabs">
+                                            <span class="tab active">Leads</span>
+                                            <span class="tab">Pipeline</span>
+                                            <span class="tab">Contacts</span>
+                                            <span class="tab">Tasks</span>
+                                        </div>
+                                        <div class="crm-user">JD</div>
+                                    </div>
+                                    <div class="crm-content">
+                                        <div class="crm-sidebar">
+                                            <div class="filter-title">Filter Leads</div>
+                                            <div class="filter-group">
+                                                <div class="filter-item active">All Leads <span>24</span></div>
+                                                <div class="filter-item">Hot <span class="hot">8</span></div>
+                                                <div class="filter-item">Warm <span>10</span></div>
+                                                <div class="filter-item">Cold <span>6</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="crm-main">
+                                            <div class="lead-card">
+                                                <div class="lead-status hot"></div>
+                                                <div class="lead-info">
+                                                    <div class="lead-name">Sarah Mitchell</div>
+                                                    <div class="lead-detail">Looking for 4BR in Eastern Suburbs</div>
+                                                </div>
+                                                <div class="lead-budget">$2.5M</div>
+                                                <div class="lead-action">Call</div>
+                                            </div>
+                                            <div class="lead-card">
+                                                <div class="lead-status warm"></div>
+                                                <div class="lead-info">
+                                                    <div class="lead-name">James Chen</div>
+                                                    <div class="lead-detail">Investment property, North Shore</div>
+                                                </div>
+                                                <div class="lead-budget">$1.8M</div>
+                                                <div class="lead-action">Email</div>
+                                            </div>
+                                            <div class="lead-card">
+                                                <div class="lead-status hot"></div>
+                                                <div class="lead-info">
+                                                    <div class="lead-name">Emma Thompson</div>
+                                                    <div class="lead-detail">First home buyer, Inner West</div>
+                                                </div>
+                                                <div class="lead-budget">$1.2M</div>
+                                                <div class="lead-action">Meeting</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="portfolio-overlay">
-                            <h3 class="portfolio-title">AI-Driven Real Estate Platform</h3>
-                            <p class="portfolio-desc">A powerful dark-mode interface with AI features, lead automation, and advanced search functionality.</p>
+                        <div class="slide-info">
+                            <h3>Agent CRM Platform</h3>
+                            <p>Lead management system with pipeline tracking, automated follow-ups, and client communication tools.</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="slideshow-dots">
+                    <button class="dot active" data-slide="0"></button>
+                    <button class="dot" data-slide="1"></button>
+                    <button class="dot" data-slide="2"></button>
                 </div>
             </div>
         </section>

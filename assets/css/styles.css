@@ -872,81 +872,603 @@ input, textarea {
 }
 
 /* ============================================
-   Portfolio Section
+   Portfolio Section - Slideshow with Browser Mockups
    ============================================ */
 .portfolio {
     padding: var(--section-padding) 0;
     background: var(--color-gray-50);
 }
 
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+.slideshow-nav {
+    display: flex;
+    gap: 8px;
 }
 
-.portfolio-item {
-    position: relative;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    aspect-ratio: 4/3;
+.slideshow-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--color-gray-300);
+    background: var(--color-white);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
 }
 
-.portfolio-item-large {
-    grid-row: span 2;
-    aspect-ratio: auto;
+.slideshow-btn:hover {
+    background: var(--color-black);
+    border-color: var(--color-black);
+    color: var(--color-white);
 }
 
-.portfolio-image {
-    width: 100%;
+.slideshow-container {
+    position: relative;
+    margin-top: 48px;
+}
+
+.slideshow-slide {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.slideshow-slide.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Browser Mockup */
+.browser-mockup {
+    background: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.browser-header {
+    background: #f5f5f7;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.browser-header-dark {
+    background: #2d2d2d;
+    border-bottom-color: #3d3d3d;
+}
+
+.browser-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.browser-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.browser-dots .dot.red { background: #ff5f57; }
+.browser-dots .dot.yellow { background: #ffbd2e; }
+.browser-dots .dot.green { background: #28c940; }
+
+.browser-url {
+    flex: 1;
+    background: var(--color-white);
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--color-gray-500);
+}
+
+.browser-header-dark .browser-url {
+    background: #1a1a1a;
+    color: #888;
+}
+
+.browser-content {
+    height: 500px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.browser-content-light {
+    background: #f8f9fc;
+}
+
+.browser-content-dark {
+    background: #121218;
+}
+
+/* Mockup Website Styles */
+.mockup-website {
     height: 100%;
-    background: var(--color-gray-200);
+    font-family: var(--font-secondary);
 }
 
-.portfolio-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-slower);
+/* Property Listings Mockup */
+.mockup-listings {
+    padding: 0;
 }
 
-.portfolio-item:hover .portfolio-image img {
-    transform: scale(1.05);
+.mockup-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background: rgba(0, 0, 0, 0.3);
 }
 
-.portfolio-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 32px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-    transform: translateY(60%);
-    transition: transform var(--transition-base);
+.mockup-logo {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-white);
 }
 
-.portfolio-item:hover .portfolio-overlay {
-    transform: translateY(0);
+.mockup-nav-links {
+    display: flex;
+    gap: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
 }
 
-.portfolio-title {
-    font-family: var(--font-primary);
-    font-size: 22px;
+.mockup-cta-btn {
+    background: var(--color-primary);
+    color: var(--color-black);
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mockup-hero {
+    padding: 48px 32px 32px;
+}
+
+.mockup-hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.mockup-hero h1 .highlight {
+    color: var(--color-primary);
+}
+
+.mockup-search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--color-white);
+    border-radius: 12px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.search-input {
+    padding: 12px 16px;
+    font-size: 14px;
+    color: var(--color-black);
+    font-weight: 500;
+}
+
+.search-filters {
+    display: flex;
+    gap: 8px;
+}
+
+.search-filters span {
+    background: var(--color-gray-100);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--color-gray-600);
+}
+
+.search-btn {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: auto;
+}
+
+.mockup-listings-grid {
+    display: flex;
+    gap: 16px;
+    padding: 0 32px;
+}
+
+.mockup-property {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.property-img {
+    height: 100px;
+}
+
+.property-info {
+    padding: 12px;
+}
+
+.property-price {
+    font-size: 16px;
     font-weight: 700;
     color: var(--color-white);
+    margin-bottom: 4px;
+}
+
+.property-address {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 4px;
+}
+
+.property-specs {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Dashboard Mockup */
+.mockup-dashboard {
+    display: flex;
+    height: 100%;
+}
+
+.dashboard-sidebar {
+    width: 200px;
+    background: var(--color-white);
+    border-right: 1px solid #eee;
+    padding: 20px;
+}
+
+.sidebar-logo {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-black);
+    margin-bottom: 32px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--color-gray-500);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-item.active {
+    background: var(--color-primary);
+    color: var(--color-black);
+    font-weight: 600;
+}
+
+.menu-icon {
+    font-size: 10px;
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: 24px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.dashboard-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-black);
+}
+
+.header-date {
+    font-size: 13px;
+    color: var(--color-gray-500);
+    background: var(--color-white);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: var(--color-white);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.stat-card.stat-green {
+    background: var(--color-primary);
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--color-gray-500);
+}
+
+.stat-green .stat-label {
+    color: var(--color-black);
+    opacity: 0.7;
+}
+
+.stat-change {
+    font-size: 12px;
+    color: #22c55e;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.dashboard-chart {
+    background: var(--color-white);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.chart-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: 20px;
+}
+
+.chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    height: 120px;
+}
+
+.chart-bars .bar {
+    flex: 1;
+    background: #e5e5e5;
+    border-radius: 4px;
+}
+
+.chart-bars .bar.active {
+    background: var(--color-primary);
+}
+
+/* CRM Mockup */
+.mockup-crm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.crm-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid #2a2a30;
+    gap: 32px;
+}
+
+.crm-logo {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-white);
+}
+
+.crm-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.crm-tabs .tab {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #888;
+}
+
+.crm-tabs .tab.active {
+    background: #2a2a30;
+    color: var(--color-white);
+}
+
+.crm-user {
+    margin-left: auto;
+    width: 32px;
+    height: 32px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.crm-content {
+    display: flex;
+    flex: 1;
+}
+
+.crm-sidebar {
+    width: 180px;
+    background: #18181c;
+    padding: 20px;
+}
+
+.filter-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.filter-item {
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #888;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-item.active {
+    background: #2a2a30;
+    color: var(--color-white);
+}
+
+.filter-item span {
+    color: #555;
+}
+
+.filter-item span.hot {
+    color: #ef4444;
+}
+
+.crm-main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lead-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #1e1e24;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.lead-status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.lead-status.hot { background: #ef4444; }
+.lead-status.warm { background: #f59e0b; }
+
+.lead-info {
+    flex: 1;
+}
+
+.lead-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 4px;
+}
+
+.lead-detail {
+    font-size: 12px;
+    color: #666;
+}
+
+.lead-budget {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.lead-action {
+    padding: 8px 16px;
+    background: #2a2a30;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--color-white);
+}
+
+/* Slide Info */
+.slide-info {
+    text-align: center;
+    padding: 32px 0;
+}
+
+.slide-info h3 {
+    font-family: var(--font-primary);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-black);
     margin-bottom: 8px;
 }
 
-.portfolio-desc {
-    font-size: 14px;
-    color: var(--color-gray-400);
-    opacity: 0;
-    transition: opacity var(--transition-base);
+.slide-info p {
+    font-size: 16px;
+    color: var(--color-gray-500);
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.portfolio-item:hover .portfolio-desc {
-    opacity: 1;
+/* Slideshow Dots */
+.slideshow-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.slideshow-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gray-300);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    padding: 0;
+}
+
+.slideshow-dots .dot.active {
+    background: var(--color-black);
+    border-color: var(--color-black);
 }
 
 /* ============================================
@@ -1358,13 +1880,36 @@ input, textarea {
         grid-template-columns: 1fr;
     }
 
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    .browser-content {
+        height: 400px;
     }
 
-    .portfolio-item-large {
-        grid-row: auto;
-        aspect-ratio: 4/3;
+    .mockup-hero h1 {
+        font-size: 24px;
+    }
+
+    .mockup-search-bar {
+        flex-wrap: wrap;
+    }
+
+    .search-filters {
+        display: none;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-sidebar {
+        display: none;
+    }
+
+    .crm-sidebar {
+        display: none;
+    }
+
+    .mockup-nav-links {
+        display: none;
     }
 
     .pricing-grid {

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollAnimations.init();
     SmoothScroll.init();
     Forms.init();
+    ProjectSlideshow.init();
 });
 
 /* ============================================
@@ -233,9 +234,9 @@ const ScrollAnimations = {
         const processGrid = document.querySelector('.process-grid');
         if (processGrid) processGrid.classList.add('stagger');
 
-        // Portfolio items
-        const portfolioGrid = document.querySelector('.portfolio-grid');
-        if (portfolioGrid) portfolioGrid.classList.add('stagger');
+        // Slideshow container
+        const slideshowContainer = document.querySelector('.slideshow-container');
+        if (slideshowContainer) slideshowContainer.classList.add('fade-in-up');
 
         // Pricing cards
         const pricingGrid = document.querySelector('.pricing-grid');
@@ -466,3 +467,89 @@ const ProcessCarousel = {
 if (window.innerWidth <= 768) {
     ProcessCarousel.init();
 }
+
+/* ============================================
+   Project Slideshow
+   ============================================ */
+const ProjectSlideshow = {
+    slides: null,
+    dots: null,
+    prevBtn: null,
+    nextBtn: null,
+    currentIndex: 0,
+    autoPlayInterval: null,
+    autoPlayDelay: 5000, // 5 seconds
+
+    init() {
+        this.slides = document.querySelectorAll('.slideshow-slide');
+        this.dots = document.querySelectorAll('.slideshow-dots .dot');
+        this.prevBtn = document.querySelector('.slideshow-prev');
+        this.nextBtn = document.querySelector('.slideshow-next');
+
+        if (!this.slides.length) return;
+
+        // Event listeners
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.prev());
+        }
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.next());
+        }
+
+        // Dots navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        // Start auto-play
+        this.startAutoPlay();
+
+        // Pause on hover
+        const container = document.querySelector('.slideshow-container');
+        if (container) {
+            container.addEventListener('mouseenter', () => this.stopAutoPlay());
+            container.addEventListener('mouseleave', () => this.startAutoPlay());
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prev();
+            if (e.key === 'ArrowRight') this.next();
+        });
+    },
+
+    goToSlide(index) {
+        // Remove active class from current
+        this.slides[this.currentIndex].classList.remove('active');
+        this.dots[this.currentIndex].classList.remove('active');
+
+        // Update index
+        this.currentIndex = index;
+
+        // Add active class to new
+        this.slides[this.currentIndex].classList.add('active');
+        this.dots[this.currentIndex].classList.add('active');
+    },
+
+    next() {
+        const nextIndex = (this.currentIndex + 1) % this.slides.length;
+        this.goToSlide(nextIndex);
+    },
+
+    prev() {
+        const prevIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+        this.goToSlide(prevIndex);
+    },
+
+    startAutoPlay() {
+        this.stopAutoPlay();
+        this.autoPlayInterval = setInterval(() => this.next(), this.autoPlayDelay);
+    },
+
+    stopAutoPlay() {
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+        }
+    }
+};
