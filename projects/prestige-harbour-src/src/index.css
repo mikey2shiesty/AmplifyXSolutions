@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ivory-50 text-charcoal-900 font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+  ::selection {
+    @apply bg-bronze-500/30 text-charcoal-900;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-6 md:px-10 lg:px-16;
+  }
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-widest text-bronze-600;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-charcoal-900 text-ivory-50 px-7 py-4 text-xs uppercase tracking-widest font-medium transition-all duration-500 ease-smooth hover:bg-bronze-600 hover:gap-3;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-charcoal-900/20 text-charcoal-900 px-7 py-4 text-xs uppercase tracking-widest font-medium transition-all duration-500 ease-smooth hover:border-charcoal-900 hover:gap-3;
+  }
+  .btn-light {
+    @apply inline-flex items-center gap-2 bg-ivory-50 text-charcoal-900 px-7 py-4 text-xs uppercase tracking-widest font-medium transition-all duration-500 ease-smooth hover:bg-bronze-500 hover:text-ivory-50 hover:gap-3;
+  }
+  .hairline {
+    @apply block h-px w-12 bg-bronze-500;
+  }
+  .input-clean {
+    @apply w-full bg-transparent border-b border-charcoal-900/20 py-3 text-sm text-charcoal-900 placeholder:text-charcoal-900/40 focus:outline-none focus:border-bronze-500 transition-colors;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f4ec;
+}
+::-webkit-scrollbar-thumb {
+  background: #c4a478;
+  border: 2px solid #f7f4ec;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9c7c52;
+}

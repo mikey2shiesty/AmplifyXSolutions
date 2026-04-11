@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Our Projects — Explore premium real estate websites, investment dashboards, and CRM platforms built by AmplifyX Solutions.">
+    <meta name="keywords" content="real estate portfolio, web development projects, AmplifyX Solutions projects">
+    <meta name="author" content="AmplifyX Solutions">
+
+    <title>Portfolio | AmplifyX Solutions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">AX</div>
+            <div class="loader-bar"><span></span></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo.png" alt="AmplifyX Solutions" class="logo-img">
+            </a>
+
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="/#home" class="nav-link">Home</a></li>
+                    <li><a href="/#about" class="nav-link">About</a></li>
+                    <li><a href="/#services" class="nav-link">Services</a></li>
+                    <li><a href="/portfolio/" class="nav-link active">Portfolio</a></li>
+                    <li><a href="/#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="/#process" class="nav-link">Our Process</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link">Support <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/#contact">Contact Us</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <a href="/#contact" class="btn btn-primary header-cta">
+                <span>Get Started</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Portfolio Section -->
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Our Projects</span>
+                    <div class="slideshow-nav">
+                        <button class="slideshow-btn slideshow-prev" aria-label="Previous project">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <button class="slideshow-btn slideshow-next" aria-label="Next project">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="slideshow-container">
+                    <!-- Slide 1: Luxury Property Portal - Rose Gold Theme -->
+                    <div class="slideshow-slide active">
+                        <a href="/projects/prestige-harbour/" class="browser-mockup project-link" aria-label="View live Prestige Harbour demo">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="browser-address-bar"></div>
+                            </div>
+                            <div class="browser-content project-preview">
+                                <img src="/assets/images/prestige-harbour-preview.jpg" alt="Prestige Harbour — Sydney luxury real estate" class="project-preview-img" loading="lazy">
+                            </div>
+                        </a>
+                        <div class="slide-info">
+                            <h3>Luxury Property Portal</h3>
+                            <p>Premium listings platform with concierge booking, virtual tours, and exclusive off-market access.</p>
+                            <a href="/projects/prestige-harbour/" class="slide-link">
+                                <span>View Live Project</span>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3.33337 8H12.6667M12.6667 8L8.00004 3.33333M12.6667 8L8.00004 12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Investment Dashboard - Deep Teal Theme -->
+                    <div class="slideshow-slide">
+                        <div class="browser-mockup">
+                            <div class="browser-header browser-header-dark">
+                                <div class="browser-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="browser-address-bar dark"></div>
+                            </div>
+                            <div class="browser-content mockup-invest">
+                                <div class="invest-sidebar">
+                                    <div class="invest-logo">
+                                        <div class="logo-icon"></div>
+                                        <span>VAULT</span>
+                                    </div>
+                                    <div class="invest-menu">
+                                        <div class="inv-item active">
+                                            <div class="inv-icon">◈</div>
+                                            <span>Overview</span>
+                                        </div>
+                                        <div class="inv-item">
+                                            <div class="inv-icon">◇</div>
+                                            <span>Portfolio</span>
+                                        </div>
+                                        <div class="inv-item">
+                                            <div class="inv-icon">◇</div>
+                                            <span>Analytics</span>
+                                        </div>
+                                        <div class="inv-item">
+                                            <div class="inv-icon">◇</div>
+                                            <span>Transactions</span>
+                                        </div>
+                                        <div class="inv-item">
+                                            <div class="inv-icon">◇</div>
+                                            <span>Documents</span>
+                                        </div>
+                                    </div>
+                                    <div class="invest-user">
+                                        <div class="user-avatar"></div>
+                                        <div class="user-info">
+                                            <span class="user-name">Alexander K.</span>
+                                            <span class="user-role">Premium Investor</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="invest-main">
+                                    <div class="invest-header">
+                                        <div>
+                                            <h2>Portfolio Performance</h2>
+                                            <span class="invest-date">February 2025</span>
+                                        </div>
+                                        <div class="invest-actions">
+                                            <div class="action-btn">Export</div>
+                                            <div class="action-btn primary">+ Add Asset</div>
+                                        </div>
+                                    </div>
+                                    <div class="invest-stats">
+                                        <div class="inv-card main">
+                                            <span class="inv-label">Total Net Worth</span>
+                                            <span class="inv-value">$12,847,200</span>
+                                            <div class="inv-change positive">
+                                                <span>↑ 18.4%</span>
+                                                <span class="period">vs last year</span>
+                                            </div>
+                                        </div>
+                                        <div class="inv-card">
+                                            <span class="inv-label">Monthly Cash Flow</span>
+                                            <span class="inv-value">$84,200</span>
+                                            <div class="inv-change positive">↑ 12.1%</div>
+                                        </div>
+                                        <div class="inv-card">
+                                            <span class="inv-label">Properties</span>
+                                            <span class="inv-value">14</span>
+                                            <div class="inv-sub">3 Commercial · 11 Residential</div>
+                                        </div>
+                                        <div class="inv-card">
+                                            <span class="inv-label">Avg. Yield</span>
+                                            <span class="inv-value">7.8%</span>
+                                            <div class="inv-change positive">↑ 0.6%</div>
+                                        </div>
+                                    </div>
+                                    <div class="invest-chart">
+                                        <div class="chart-header">
+                                            <span>Growth Overview</span>
+                                            <div class="chart-tabs">
+                                                <span>1M</span>
+                                                <span>6M</span>
+                                                <span class="active">1Y</span>
+                                                <span>All</span>
+                                            </div>
+                                        </div>
+                                        <div class="chart-visual">
+                                            <svg viewBox="0 0 400 100" class="chart-line">
+                                                <defs>
+                                                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                        <stop offset="0%" style="stop-color:#0d9488;stop-opacity:0.3"/>
+                                                        <stop offset="100%" style="stop-color:#0d9488;stop-opacity:0"/>
+                                                    </linearGradient>
+                                                </defs>
+                                                <path d="M0,80 Q50,75 100,60 T200,40 T300,25 T400,10" fill="none" stroke="#0d9488" stroke-width="2"/>
+                                                <path d="M0,80 Q50,75 100,60 T200,40 T300,25 T400,10 L400,100 L0,100 Z" fill="url(#chartGradient)"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-info">
+                            <h3>Investment Dashboard</h3>
+                            <p>Enterprise portfolio management with real-time analytics, tax reporting, and wealth tracking.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Agent CRM Platform - Warm Amber Theme -->
+                    <div class="slideshow-slide">
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <div class="browser-address-bar"></div>
+                            </div>
+                            <div class="browser-content mockup-crm-new">
+                                <div class="crm-top-bar">
+                                    <div class="crm-brand">
+                                        <div class="brand-icon"></div>
+                                        <span>NEXUS</span>
+                                    </div>
+                                    <div class="crm-nav-tabs">
+                                        <span class="active">Dashboard</span>
+                                        <span>Pipeline</span>
+                                        <span>Contacts</span>
+                                        <span>Calendar</span>
+                                        <span>Reports</span>
+                                    </div>
+                                    <div class="crm-top-right">
+                                        <div class="notif-bell">3</div>
+                                        <div class="user-pill">
+                                            <div class="user-img"></div>
+                                            <span>Jessica M.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="crm-body">
+                                    <div class="crm-left">
+                                        <div class="crm-welcome">
+                                            <h2>Good morning, Jessica</h2>
+                                            <p>You have <strong>8 tasks</strong> and <strong>3 meetings</strong> today</p>
+                                        </div>
+                                        <div class="crm-metrics">
+                                            <div class="metric">
+                                                <div class="metric-icon hot"></div>
+                                                <div class="metric-data">
+                                                    <span class="metric-num">24</span>
+                                                    <span class="metric-label">Active Leads</span>
+                                                </div>
+                                            </div>
+                                            <div class="metric">
+                                                <div class="metric-icon warm"></div>
+                                                <div class="metric-data">
+                                                    <span class="metric-num">$4.2M</span>
+                                                    <span class="metric-label">Pipeline Value</span>
+                                                </div>
+                                            </div>
+                                            <div class="metric">
+                                                <div class="metric-icon cool"></div>
+                                                <div class="metric-data">
+                                                    <span class="metric-num">89%</span>
+                                                    <span class="metric-label">Response Rate</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="crm-pipeline">
+                                            <div class="pipe-header">
+                                                <span>Sales Pipeline</span>
+                                                <span class="pipe-link">View All</span>
+                                            </div>
+                                            <div class="pipe-stages">
+                                                <div class="stage">
+                                                    <span class="stage-name">New Inquiry</span>
+                                                    <div class="stage-track"><div class="stage-bar" style="width: 100%;"></div></div>
+                                                    <span class="stage-count">12</span>
+                                                </div>
+                                                <div class="stage">
+                                                    <span class="stage-name">Qualified</span>
+                                                    <div class="stage-track"><div class="stage-bar" style="width: 75%;"></div></div>
+                                                    <span class="stage-count">8</span>
+                                                </div>
+                                                <div class="stage">
+                                                    <span class="stage-name">Viewing Booked</span>
+                                                    <div class="stage-track"><div class="stage-bar" style="width: 50%;"></div></div>
+                                                    <span class="stage-count">6</span>
+                                                </div>
+                                                <div class="stage">
+                                                    <span class="stage-name">Negotiating</span>
+                                                    <div class="stage-track"><div class="stage-bar" style="width: 25%;"></div></div>
+                                                    <span class="stage-count">3</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="crm-right">
+                                        <div class="crm-activity">
+                                            <div class="act-header">
+                                                <span>Recent Activity</span>
+                                            </div>
+                                            <div class="act-list">
+                                                <div class="act-item">
+                                                    <div class="act-dot new"></div>
+                                                    <div class="act-content">
+                                                        <span class="act-title">New lead from website</span>
+                                                        <span class="act-desc">Sarah Chen - $2.5M budget</span>
+                                                    </div>
+                                                    <span class="act-time">2m ago</span>
+                                                </div>
+                                                <div class="act-item">
+                                                    <div class="act-dot call"></div>
+                                                    <div class="act-content">
+                                                        <span class="act-title">Call completed</span>
+                                                        <span class="act-desc">Michael R. - Follow up scheduled</span>
+                                                    </div>
+                                                    <span class="act-time">1h ago</span>
+                                                </div>
+                                                <div class="act-item">
+                                                    <div class="act-dot deal"></div>
+                                                    <div class="act-content">
+                                                        <span class="act-title">Deal closed!</span>
+                                                        <span class="act-desc">42 Harbour St - $3.2M</span>
+                                                    </div>
+                                                    <span class="act-time">3h ago</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="crm-upcoming">
+                                            <div class="up-header">Today's Schedule</div>
+                                            <div class="up-list">
+                                                <div class="up-item">
+                                                    <div class="up-time">10:00</div>
+                                                    <div class="up-details">
+                                                        <span>Property Viewing</span>
+                                                        <span class="up-loc">18 Rose Bay Ave</span>
+                                                    </div>
+                                                </div>
+                                                <div class="up-item">
+                                                    <div class="up-time">14:30</div>
+                                                    <div class="up-details">
+                                                        <span>Client Meeting</span>
+                                                        <span class="up-loc">Thompson Family</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-info">
+                            <h3>Agent CRM Platform</h3>
+                            <p>Intelligent lead management with AI-powered insights, automated workflows, and team collaboration.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slideshow-dots">
+                    <button class="dot active" data-slide="0"></button>
+                    <button class="dot" data-slide="1"></button>
+                    <button class="dot" data-slide="2"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo">
+                        <img src="/assets/images/logo-white.png" alt="AmplifyX Solutions">
+                    </a>
+                    <p class="footer-tagline">Building high-performance real estate websites that attract buyers, generate leads, and elevate your online presence.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Stay informed with our newsletter for the latest updates and insights.</p>
+                    <form class="newsletter-form" id="newsletterForm" action="https://formsubmit.co/ajax/amplifyxsolutions@gmail.com" method="POST">
+                        <div class="form-group">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3.33337 3.33333H16.6667C17.5834 3.33333 18.3334 4.08333 18.3334 5V15C18.3334 15.9167 17.5834 16.6667 16.6667 16.6667H3.33337C2.41671 16.6667 1.66671 15.9167 1.66671 15V5C1.66671 4.08333 2.41671 3.33333 3.33337 3.33333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.3334 5L10 10.8333L1.66671 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                            <input type="hidden" name="_subject" value="New newsletter subscriber">
+                            <button type="submit" aria-label="Subscribe">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M18.3334 1.66667L9.16671 10.8333M18.3334 1.66667L12.5 18.3333L9.16671 10.8333M18.3334 1.66667L1.66671 7.5L9.16671 10.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/amplifyxsolutions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><circle cx="14.5" cy="5.5" r="1" fill="currentColor"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100094532684346" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M15 1.66667H12.5C11.395 1.66667 10.3352 2.10566 9.55376 2.88706C8.77236 3.66846 8.33337 4.72827 8.33337 5.83334V8.33334H5.83337V11.6667H8.33337V18.3333H11.6667V11.6667H14.1667L15 8.33334H11.6667V5.83334C11.6667 5.61233 11.7545 5.40037 11.9108 5.24409C12.0671 5.08781 12.279 5.00001 12.5 5.00001H15V1.66667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; Copyright 2024 <strong>AmplifyX Solutions</strong> - All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -21,17 +21,41 @@ const Loader = {
         const loader = document.getElementById('loader');
         if (!loader) return;
 
+        // Only show the loader on the very first page view of the session.
+        // Skip it on subsequent navigations, refreshes, or page switches.
+        if (sessionStorage.getItem('ax-loaded')) {
+            loader.remove();
+            this.animateHero();
+            return;
+        }
+
         document.body.classList.add('loading');
 
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                loader.classList.add('hidden');
-                document.body.classList.remove('loading');
+        let hidden = false;
+        const hide = () => {
+            if (hidden) return;
+            hidden = true;
+            loader.classList.add('hidden');
+            document.body.classList.remove('loading');
+            sessionStorage.setItem('ax-loaded', '1');
+            this.animateHero();
+            // Remove from DOM after the CSS transition completes
+            setTimeout(() => loader.remove(), 600);
+        };
 
-                // Trigger hero animations
-                this.animateHero();
-            }, 1800);
-        });
+        const onLoaded = () => setTimeout(hide, 1200);
+
+        // If main.js loads after `window.load` has already fired, run immediately
+        if (document.readyState === 'complete') {
+            onLoaded();
+        } else {
+            window.addEventListener('load', onLoaded, { once: true });
+        }
+
+        // Fail-safe: always hide the loader within 3.5s no matter what.
+        // Protects against a slow/blocked resource that would otherwise
+        // prevent `window.load` from firing.
+        setTimeout(hide, 3500);
     },
 
     animateHero() {
@@ -270,8 +294,26 @@ const SmoothScroll = {
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+
+                // Keep the URL clean — no hash in the address bar
+                history.replaceState(null, '', window.location.pathname.replace(/\/index\.html$/, '/'));
             });
         });
+
+        // If we arrived at a page with a hash (e.g. /#pricing from /portfolio/),
+        // scroll to that section and then strip the hash from the URL.
+        if (window.location.hash) {
+            const hash = window.location.hash;
+            setTimeout(() => {
+                const target = document.querySelector(hash);
+                if (target) {
+                    const headerHeight = document.getElementById('header')?.offsetHeight || 0;
+                    const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+                history.replaceState(null, '', window.location.pathname.replace(/\/index\.html$/, '/'));
+            }, 400);
+        }
     }
 };
 
