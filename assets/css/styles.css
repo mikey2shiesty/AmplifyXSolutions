@@ -2555,29 +2555,51 @@ a.browser-mockup.project-link:hover {
     box-shadow: 0 60px 140px rgba(0, 0, 0, 0.28), 0 15px 50px rgba(0, 0, 0, 0.15);
 }
 
-a.browser-mockup.project-link::after {
-    content: 'View Live →';
+/* Dark gradient overlay that fades in over the bottom of the preview on hover */
+a.browser-mockup.project-link::before {
+    content: '';
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: var(--color-black);
-    color: var(--color-white);
-    padding: 10px 18px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: 5;
+}
+
+a.browser-mockup.project-link:hover::before {
+    opacity: 1;
+}
+
+/* "View Live Project →" pill, centered at the bottom of the preview image */
+a.browser-mockup.project-link::after {
+    content: 'View Live Project →';
+    position: absolute;
+    left: 50%;
+    bottom: 36px;
+    transform: translate(-50%, 12px);
+    background: var(--color-white);
+    color: var(--color-black);
+    padding: 14px 28px;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     border-radius: 999px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
     opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     pointer-events: none;
     z-index: 10;
+    white-space: nowrap;
 }
 
 a.browser-mockup.project-link:hover::after {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(-50%, 0);
 }
 
 .slide-link {

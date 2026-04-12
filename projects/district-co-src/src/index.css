@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-950 text-white font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-teal-500/30 text-white;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply px-6 md:px-10 lg:px-16;
+  }
+  .eyebrow {
+    @apply text-[11px] font-medium uppercase tracking-[0.25em] text-teal-400;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-teal-500 text-slate-950 px-7 py-4 text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-500 ease-smooth hover:bg-teal-400 hover:gap-3;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-white/20 text-white px-7 py-4 text-xs uppercase tracking-[0.2em] font-medium transition-all duration-500 ease-smooth hover:border-teal-400 hover:text-teal-400 hover:gap-3;
+  }
+  .btn-light {
+    @apply inline-flex items-center gap-2 bg-white text-slate-950 px-7 py-4 text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-500 ease-smooth hover:bg-teal-400 hover:gap-3;
+  }
+  .hairline {
+    @apply block h-px w-12 bg-teal-500;
+  }
+  .input-dark {
+    @apply w-full bg-transparent border-b border-white/20 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-teal-400 transition-colors;
+  }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0b0f14; }
+::-webkit-scrollbar-thumb { background: #14b8a6; border: 2px solid #0b0f14; }
+::-webkit-scrollbar-thumb:hover { background: #2dd4bf; }

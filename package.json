@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "AmplifyX Solutions - Premium Web Development",
   "scripts": {
-    "dev": "live-server --port=3000 --no-browser --wait=500 --ignore=node_modules,projects/prestige-harbour-src,projects/prestige-harbour/assets",
+    "dev": "live-server --port=3000 --no-browser --wait=500 --ignore=node_modules,projects/prestige-harbour-src,projects/prestige-harbour/assets,projects/district-co-src,projects/district-co/assets",
     "dev:prestige": "npm --prefix projects/prestige-harbour-src run dev",
     "build:prestige": "npm --prefix projects/prestige-harbour-src run build",
-    "install:prestige": "npm --prefix projects/prestige-harbour-src install"
+    "install:prestige": "npm --prefix projects/prestige-harbour-src install",
+    "dev:district": "npm --prefix projects/district-co-src run dev",
+    "build:district": "npm --prefix projects/district-co-src run build",
+    "install:district": "npm --prefix projects/district-co-src install"
   },
   "devDependencies": {
     "live-server": "^1.2.2"
