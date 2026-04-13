@@ -2360,10 +2360,21 @@ input, textarea {
         box-shadow: none;
         background: var(--color-gray-50);
         margin-top: 8px;
+        min-width: 100%;
+        border-radius: var(--radius-full);
+        opacity: 1;
+        visibility: visible;
+        display: none;
+    }
+
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+        display: block;
     }
 
     .nav-dropdown .dropdown-menu a {
         text-align: center;
+        padding: 14px 16px;
     }
 
     .header-cta {
