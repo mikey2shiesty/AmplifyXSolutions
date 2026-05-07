@@ -335,18 +335,13 @@ const Forms = {
             const formData = new FormData(form);
 
             try {
-                const response = await fetch(form.action, {
+                await fetch(form.action, {
                     method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    mode: 'no-cors',
+                    body: formData
                 });
-
-                if (response.ok) {
-                    this.showSuccess(form, 'Thanks! We\'ll be in touch soon.');
-                    form.reset();
-                } else {
-                    this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
-                }
+                this.showSuccess(form, 'Thanks! We\'ll be in touch soon.');
+                form.reset();
             } catch (error) {
                 this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
             }
@@ -362,18 +357,13 @@ const Forms = {
             const formData = new FormData(form);
 
             try {
-                const response = await fetch(form.action, {
+                await fetch(form.action, {
                     method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    mode: 'no-cors',
+                    body: formData
                 });
-
-                if (response.ok) {
-                    this.showSuccess(form, 'You\'re subscribed!');
-                    form.reset();
-                } else {
-                    this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
-                }
+                this.showSuccess(form, 'You\'re subscribed!');
+                form.reset();
             } catch (error) {
                 this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
             }
