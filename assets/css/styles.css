@@ -2052,6 +2052,65 @@ input, textarea {
     flex-shrink: 0;
 }
 
+/* Form status (success / error) — used by .cta-form & .newsletter-form */
+.form-status {
+    position: absolute;
+    bottom: -44px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    background: #fff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    z-index: 2;
+    opacity: 0;
+    animation: form-status-in 0.28s ease forwards;
+}
+
+.form-status.is-leaving {
+    animation: form-status-out 0.28s ease forwards;
+}
+
+.form-status::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+}
+
+.form-status--success { color: #14532d; }
+.form-status--success::before {
+    background-color: #15803d;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M2.5 6.2l2.3 2.3 4.7-5.2' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+.form-status--error { color: #7f1d1d; }
+.form-status--error::before {
+    background-color: #b91c1c;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><path d='M3.5 3.5l5 5M8.5 3.5l-5 5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round'/></svg>");
+}
+
+@keyframes form-status-in {
+    from { opacity: 0; transform: translate(-50%, 6px); }
+    to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+@keyframes form-status-out {
+    from { opacity: 1; transform: translate(-50%, 0); }
+    to   { opacity: 0; transform: translate(-50%, 6px); }
+}
+
 /* ============================================
    Footer
    ============================================ */
@@ -2467,6 +2526,12 @@ input, textarea {
 
     .about-quote {
         font-size: 20px;
+    }
+
+    .form-status {
+        white-space: normal;
+        text-align: left;
+        max-width: calc(100% - 32px);
     }
 
     .service-title {

@@ -340,10 +340,10 @@ const Forms = {
                     mode: 'no-cors',
                     body: formData
                 });
-                this.showSuccess(form, 'Thanks! We\'ll be in touch soon.');
+                this.showMessage(form, 'Thanks! We\'ll be in touch soon.', 'success');
                 form.reset();
             } catch (error) {
-                this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
+                this.showMessage(form, 'Couldn\'t send — please try again.', 'error');
             }
         });
     },
@@ -362,35 +362,30 @@ const Forms = {
                     mode: 'no-cors',
                     body: formData
                 });
-                this.showSuccess(form, 'You\'re subscribed!');
+                this.showMessage(form, 'You\'re subscribed!', 'success');
                 form.reset();
             } catch (error) {
-                this.showSuccess(form, 'Oops! Something went wrong. Please try again.');
+                this.showMessage(form, 'Couldn\'t send — please try again.', 'error');
             }
         });
     },
 
-    showSuccess(form, message) {
-        const existingMessage = form.querySelector('.success-message');
-        if (existingMessage) existingMessage.remove();
+    showMessage(form, message, type = 'success') {
+        const existing = form.querySelector('.form-status');
+        if (existing) existing.remove();
 
-        const successEl = document.createElement('div');
-        successEl.className = 'success-message';
-        successEl.textContent = message;
-        successEl.style.cssText = `
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #c8ff00;
-            font-size: 14px;
-            font-weight: 500;
-        `;
+        const el = document.createElement('div');
+        el.className = `form-status form-status--${type}`;
+        el.setAttribute('role', type === 'error' ? 'alert' : 'status');
+        el.textContent = message;
 
         form.style.position = 'relative';
-        form.appendChild(successEl);
+        form.appendChild(el);
 
-        setTimeout(() => successEl.remove(), 3000);
+        setTimeout(() => {
+            el.classList.add('is-leaving');
+            setTimeout(() => el.remove(), 280);
+        }, 4000);
     }
 };
 
