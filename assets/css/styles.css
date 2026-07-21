@@ -2178,6 +2178,65 @@ input, textarea {
     margin-bottom: 60px;
 }
 
+/* Footer contact details */
+.footer-contact {
+    list-style: none;
+    margin: 24px 0 0;
+    padding: 0;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-gray-400, #9ca3af);
+    font-size: 15px;
+}
+
+.footer-contact li,
+.footer-contact a {
+    min-height: 44px;
+}
+
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact a:hover,
+.footer-contact a:focus-visible {
+    color: var(--color-accent, #c4f000);
+}
+
+.footer-contact svg {
+    flex-shrink: 0;
+}
+
+/* "Prefer to talk?" line under the contact form */
+.cta-call {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 15px;
+    color: var(--color-gray-600, #4b5563);
+}
+
+.cta-call a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+}
+
+.cta-call a:hover,
+.cta-call a:focus-visible {
+    text-decoration-thickness: 2px;
+}
+
 .footer-logo {
     display: inline-block;
     margin-bottom: 20px;
