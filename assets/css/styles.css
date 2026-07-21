@@ -905,6 +905,17 @@ input, textarea {
     order: 2;
 }
 
+/* The shared mockup uses a fixed height, which crops the screenshot
+   horizontally in this narrower column. Match the capture instead. */
+.case-study .browser-content {
+    height: auto;
+    aspect-ratio: 1440 / 900;
+}
+
+.case-study .project-preview-img {
+    object-position: top left;
+}
+
 .case-tag {
     display: inline-block;
     padding: 7px 16px;
