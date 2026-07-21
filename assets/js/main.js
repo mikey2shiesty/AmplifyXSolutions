@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     SmoothScroll.init();
     Forms.init();
     ProjectSlideshow.init();
+    FooterYear.init();
 });
 
 /* ============================================
@@ -578,5 +579,20 @@ const ProjectSlideshow = {
             clearInterval(this.autoPlayInterval);
             this.autoPlayInterval = null;
         }
+    }
+};
+
+/* ============================================
+   Footer Year
+   Keeps the copyright current automatically.
+   The markup holds the correct year as a fallback
+   so it stays right even if this never runs.
+   ============================================ */
+const FooterYear = {
+    init() {
+        const year = new Date().getFullYear();
+        document.querySelectorAll('.js-year').forEach(el => {
+            el.textContent = year;
+        });
     }
 };
