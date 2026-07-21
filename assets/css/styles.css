@@ -2191,6 +2191,18 @@ input, textarea {
     color: var(--color-gray-400);
 }
 
+.pricing-founding {
+    margin: -12px 0 24px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(200, 255, 0, 0.35);
+    background: rgba(200, 255, 0, 0.08);
+    color: var(--color-primary);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
 /* ============================================
    CTA Section
    ============================================ */
