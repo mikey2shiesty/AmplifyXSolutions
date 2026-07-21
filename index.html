@@ -40,6 +40,59 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Sections animate in on scroll, which means they start hidden.
+         Without scripting that state would never be cleared. -->
+    <noscript>
+        <style>
+            .fade-in-up,
+            .stagger > * {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .loader { display: none !important; }
+            body.loading { overflow: auto !important; }
+        </style>
+    </noscript>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://www.amplifyxsolutions.com.au/#business",
+        "name": "AmplifyX Solutions",
+        "description": "Perth-based web design studio building high-performing real estate websites for Western Australian agencies.",
+        "url": "https://www.amplifyxsolutions.com.au/",
+        "email": "hello@amplifyxsolutions.com.au",
+        "telephone": "+61451983973",
+        "image": "https://www.amplifyxsolutions.com.au/assets/images/og-image.jpg",
+        "logo": "https://www.amplifyxsolutions.com.au/assets/images/logo.png",
+        "priceRange": "$$",
+        "areaServed": {
+            "@type": "City",
+            "name": "Perth",
+            "containedInPlace": {
+                "@type": "State",
+                "name": "Western Australia"
+            }
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Perth",
+            "addressRegion": "WA",
+            "addressCountry": "AU"
+        },
+        "sameAs": [
+            "https://www.instagram.com/amplifyxsolutions/",
+            "https://www.facebook.com/profile.php?id=100094532684346"
+        ],
+        "knowsAbout": [
+            "Real estate web design",
+            "realestate.com.au and Domain feed integration",
+            "Local SEO for real estate agencies"
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Loader -->
@@ -160,7 +213,7 @@
                     </div>
 
                     <blockquote class="about-quote">
-                        <p>"AmplifyX Solutions is a Perth-based studio specialising in high-performance websites for real estate professionals. Focused on innovation, user experience, and lead generation, we help Western Australian agencies, property managers, and developers grow their digital presence. With expertise in branding, property listings, and real estate SEO, we ensure your website stands out in a competitive Perth market."</p>
+                        <p>AmplifyX Solutions is a Perth-based studio specialising in high-performance websites for real estate professionals. Focused on innovation, user experience, and lead generation, we help Western Australian agencies, property managers, and developers grow their digital presence. With expertise in branding, property listings, and real estate SEO, we ensure your website stands out in a competitive Perth market.</p>
                     </blockquote>
                 </div>
             </div>
@@ -180,7 +233,7 @@
                 <div class="services-list">
                     <div class="service-item service-highlight">
                         <div class="service-content">
-                            <h3 class="service-title">Property<br>Branding</h3>
+                            <h3 class="service-title">Property <br>Branding</h3>
                             <p class="service-desc">Complete brand identity systems including logo design, visual guidelines, and strategic market positioning to establish your agency as an industry leader.</p>
                         </div>
                         <div class="service-icon">
@@ -190,7 +243,7 @@
 
                     <div class="service-item">
                         <div class="service-content">
-                            <h3 class="service-title">Website<br>Design</h3>
+                            <h3 class="service-title">Website <br>Design</h3>
                             <p class="service-desc">High-converting websites with realestate.com.au and Domain feed integration, CRM connectivity, automated lead capture, and conversion-optimised pages built to turn visitors into clients.</p>
                         </div>
                         <div class="service-icon">
@@ -200,7 +253,7 @@
 
                     <div class="service-item">
                         <div class="service-content">
-                            <h3 class="service-title">Real Estate<br>Development</h3>
+                            <h3 class="service-title">Real Estate <br>Development</h3>
                             <p class="service-desc">Enterprise-grade property platforms with advanced search algorithms, investor dashboards, tenant portals, and automated listing syndication across major portals.</p>
                         </div>
                         <div class="service-icon">
@@ -210,7 +263,7 @@
 
                     <div class="service-item">
                         <div class="service-content">
-                            <h3 class="service-title">SEO for<br>Real Estate</h3>
+                            <h3 class="service-title">SEO for <br>Real Estate</h3>
                             <p class="service-desc">Data-driven local SEO strategies with Google Business Profile optimisation, hyperlocal content targeting, and performance analytics to dominate your market area.</p>
                         </div>
                         <div class="service-icon">
@@ -219,7 +272,7 @@
                     </div>
                     <div class="service-item">
                         <div class="service-content">
-                            <h3 class="service-title">App<br>Development</h3>
+                            <h3 class="service-title">App <br>Development</h3>
                             <p class="service-desc">Native iOS and Android applications with AR virtual tours, AI-powered chatbots, push notification campaigns, and real-time CRM synchronisation.</p>
                         </div>
                         <div class="service-icon">
@@ -437,7 +490,7 @@
             <div class="cta-bg"></div>
             <div class="container">
                 <div class="cta-content">
-                    <h2 class="cta-title">Grow Your Real Estate Business—<br>Let's Connect!</h2>
+                    <h2 class="cta-title">Grow Your Real Estate Business— <br>Let's Connect!</h2>
                     <p class="cta-desc">Discover how we can create high-performance websites tailored for Perth real estate professionals, helping you generate leads, attract buyers, and scale your business online. Perth-based, so you can always talk to a real person.</p>
                     <form class="cta-form" id="ctaForm" action="https://formsubmit.co/ajax/hello@amplifyxsolutions.com.au" method="POST" novalidate>
                         <div class="form-row">
