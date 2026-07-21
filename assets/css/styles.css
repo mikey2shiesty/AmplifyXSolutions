@@ -844,11 +844,20 @@ input, textarea {
     color: var(--color-gray-600);
 }
 
+/* The carousel only runs on mobile, where the cards are stacked one at a
+   time. Every card is visible above that, so the arrows have nothing to
+   move through and are hidden rather than left inert. */
 .process-nav {
-    display: flex;
+    display: none;
     justify-content: center;
     gap: 16px;
     margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+    .process-nav {
+        display: flex;
+    }
 }
 
 .process-arrow {

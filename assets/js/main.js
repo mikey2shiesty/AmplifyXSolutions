@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     SmoothScroll.init();
     Forms.init();
     ProjectSlideshow.init();
+    ProcessCarousel.init();
     FooterYear.init();
 });
 
@@ -492,6 +493,7 @@ const ProcessCarousel = {
     cards: null,
     prevBtn: null,
     nextBtn: null,
+    breakpoint: 768,
 
     init() {
         this.cards = document.querySelectorAll('.process-card');
@@ -500,13 +502,12 @@ const ProcessCarousel = {
 
         if (!this.cards.length || !this.prevBtn || !this.nextBtn) return;
 
-        // Only enable carousel on mobile
-        if (window.innerWidth > 768) return;
-
         this.prevBtn.addEventListener('click', () => this.prev());
         this.nextBtn.addEventListener('click', () => this.next());
 
-        this.updateView();
+        window.addEventListener('resize', debounce(() => this.handleResize(), 150));
+
+        this.handleResize();
     },
 
     prev() {
@@ -526,13 +527,27 @@ const ProcessCarousel = {
 
         this.prevBtn.style.opacity = this.currentIndex === 0 ? '0.3' : '1';
         this.nextBtn.style.opacity = this.currentIndex === this.cards.length - 1 ? '0.3' : '1';
+    },
+
+    // Widening past the breakpoint would otherwise leave the cards the
+    // carousel hid still hidden, since the grid expects them all visible.
+    showAllCards() {
+        this.cards.forEach(card => {
+            card.style.display = '';
+        });
+    },
+
+    handleResize() {
+        if (!this.cards || !this.cards.length) return;
+
+        if (window.innerWidth > this.breakpoint) {
+            this.showAllCards();
+        } else {
+            this.currentIndex = 0;
+            this.updateView();
+        }
     }
 };
-
-// Initialize carousel on mobile
-if (window.innerWidth <= 768) {
-    ProcessCarousel.init();
-}
 
 /* ============================================
    Project Slideshow
