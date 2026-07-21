@@ -412,14 +412,42 @@
                 <div class="cta-content">
                     <h2 class="cta-title">Grow Your Real Estate Business—<br>Let's Connect!</h2>
                     <p class="cta-desc">Discover how we can create high-performance websites tailored for Perth real estate professionals, helping you generate leads, attract buyers, and scale your business online. Perth-based, so you can always talk to a real person.</p>
-                    <form class="cta-form" id="ctaForm" action="https://formsubmit.co/ajax/hello@amplifyxsolutions.com.au" method="POST">
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Email address" required>
-                            <input type="hidden" name="_subject" value="New lead from AmplifyX website">
-                            <button type="submit" class="btn btn-primary">
-                                <span>Get Started Today</span>
-                            </button>
+                    <form class="cta-form" id="ctaForm" action="https://formsubmit.co/ajax/hello@amplifyxsolutions.com.au" method="POST" novalidate>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="sr-only" for="cta-name">Your name</label>
+                                <input type="text" id="cta-name" name="name" placeholder="Your name*" autocomplete="name" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="sr-only" for="cta-email">Email address</label>
+                                <input type="email" id="cta-email" name="email" placeholder="Email address*" autocomplete="email" required>
+                            </div>
                         </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label class="sr-only" for="cta-phone">Phone number</label>
+                                <input type="tel" id="cta-phone" name="phone" placeholder="Phone number" autocomplete="tel">
+                            </div>
+                            <div class="form-field">
+                                <label class="sr-only" for="cta-agency">Agency name</label>
+                                <input type="text" id="cta-agency" name="agency" placeholder="Agency name" autocomplete="organization">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label class="sr-only" for="cta-message">How can we help?</label>
+                            <textarea id="cta-message" name="message" rows="4" placeholder="How can we help? Tell us about your agency and what you'd like your website to do."></textarea>
+                        </div>
+
+                        <input type="hidden" name="_subject" value="New lead from AmplifyX website">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <button type="submit" class="btn btn-primary cta-submit">
+                            <span>Get Started Today</span>
+                        </button>
                     </form>
                 </div>
             </div>

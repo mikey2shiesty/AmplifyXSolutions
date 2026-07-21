@@ -331,21 +331,15 @@ const Forms = {
         const form = document.getElementById('ctaForm');
         if (!form) return;
 
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const formData = new FormData(form);
+            form.classList.add('was-validated');
+            if (!form.reportValidity()) return;
 
-            try {
-                await fetch(form.action, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: formData
-                });
-                this.showMessage(form, 'Thanks! We\'ll be in touch soon.', 'success');
-                form.reset();
-            } catch (error) {
-                this.showMessage(form, 'Couldn\'t send — please try again.', 'error');
-            }
+            this.submit(form, {
+                pending: 'Sending…',
+                success: 'Thanks! We\'ll be in touch soon.'
+            });
         });
     },
 
@@ -353,22 +347,66 @@ const Forms = {
         const form = document.getElementById('newsletterForm');
         if (!form) return;
 
-        form.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const formData = new FormData(form);
+            if (!form.reportValidity()) return;
 
-            try {
-                await fetch(form.action, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: formData
-                });
-                this.showMessage(form, 'You\'re subscribed!', 'success');
-                form.reset();
-            } catch (error) {
-                this.showMessage(form, 'Couldn\'t send — please try again.', 'error');
-            }
+            this.submit(form, {
+                pending: 'Subscribing…',
+                success: 'You\'re subscribed!'
+            });
         });
+    },
+
+    /**
+     * Posts a form to the FormSubmit AJAX endpoint.
+     *
+     * This deliberately uses a normal CORS request rather than `no-cors`:
+     * the endpoint returns JSON with CORS headers, so we can read whether
+     * delivery actually succeeded. Under `no-cors` the response is opaque
+     * and every submission looks successful, which would silently swallow
+     * enquiries whenever the endpoint is misconfigured or down.
+     */
+    async submit(form, messages) {
+        const button = form.querySelector('button[type="submit"]');
+        const buttonLabel = button ? button.innerHTML : null;
+
+        if (button) {
+            button.disabled = true;
+            button.innerHTML = `<span>${messages.pending}</span>`;
+        }
+
+        const restore = () => {
+            if (button) {
+                button.disabled = false;
+                button.innerHTML = buttonLabel;
+            }
+        };
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: new FormData(form)
+            });
+            const result = await response.json();
+
+            if (!response.ok || result.success !== 'true') {
+                throw new Error(result.message || 'Submission rejected');
+            }
+
+            this.showMessage(form, messages.success, 'success');
+            form.reset();
+            form.classList.remove('was-validated');
+        } catch (error) {
+            this.showMessage(
+                form,
+                'Couldn\'t send — please email hello@amplifyxsolutions.com.au',
+                'error'
+            );
+        } finally {
+            restore();
+        }
     },
 
     showMessage(form, message, type = 'success') {
