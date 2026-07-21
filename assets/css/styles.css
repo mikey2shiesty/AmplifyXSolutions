@@ -2468,10 +2468,13 @@ input, textarea {
 .footer-links ul {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 4px;
 }
 
 .footer-links a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
     font-size: 15px;
     color: var(--color-gray-400);
     transition: var(--transition-fast);
