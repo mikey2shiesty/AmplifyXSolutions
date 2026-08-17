@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Voltway Electrical — Perth's rapid-response electricians. 24/7 emergency callouts, switchboard upgrades, solar & battery, EV chargers. A concept build by AmplifyX Solutions.">
     <meta name="robots" content="noindex, follow">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0e1a'/%3E%3Cpath d='M17.5 5 9 17.5h5.5L13 27l9-13h-5.5z' fill='%23fde047'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2306090f'/%3E%3Cpath d='M17.5 5 9 17.5h5.5L13 27l9-13h-5.5z' fill='%2334d399'/%3E%3C/svg%3E">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="Voltway Electrical — Perth's Rapid-Response Electricians">
@@ -17,23 +17,26 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg: #070a12;
-            --bg-2: #0b1020;
-            --card: #111a2e;
-            --card-2: #16213a;
+            --bg: #06090f;
+            --bg-2: #0a0f18;
+            --card: #101725;
+            --card-2: #141c2e;
             --line: rgba(255, 255, 255, 0.08);
-            --line-2: rgba(255, 255, 255, 0.15);
+            --line-2: rgba(255, 255, 255, 0.16);
             --text: #eef2fb;
-            --muted: #9aa7c2;
-            --muted-2: #6b7898;
+            --muted: #98a6c0;
+            --muted-2: #667691;
+            --green: #34d399;
+            --green-lite: #6ee7b7;
             --blue: #3b82f6;
             --blue-lite: #60a5fa;
-            --volt: #fde047;
-            --volt-deep: #f5c518;
+            --grad: linear-gradient(118deg, #34d399 0%, #22c3c9 46%, #3b82f6 100%);
+            --grad-soft: linear-gradient(118deg, rgba(52,211,153,.16), rgba(59,130,246,.16));
+            --poster: 'Anton', sans-serif;
             --display: 'Space Grotesk', sans-serif;
             --body: 'Inter', sans-serif;
         }
@@ -41,203 +44,190 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: var(--body); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-        .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-        h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.04; letter-spacing: -0.02em; }
+        .wrap { width: 100%; max-width: 1220px; margin: 0 auto; padding: 0 28px; }
         a { color: inherit; text-decoration: none; }
         img { max-width: 100%; display: block; }
 
-        /* Film grain over everything */
-        .grain { position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: 0.045; mix-blend-mode: overlay;
+        .poster { font-family: var(--poster); font-weight: 400; text-transform: uppercase; line-height: 0.92; letter-spacing: 0.005em; }
+        .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+        .grain { position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: 0.05; mix-blend-mode: overlay;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
-        .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-lite); }
-        .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--volt); box-shadow: 0 0 12px var(--volt); animation: pulse 2s infinite; }
-        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+        .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green-lite); }
+        .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px var(--green); }
 
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: var(--body); font-weight: 600; font-size: 15px; padding: 15px 28px; border-radius: 12px; border: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; white-space: nowrap; }
-        .btn-volt { background: var(--volt); color: #1a1400; box-shadow: 0 10px 34px rgba(253, 224, 71, 0.26); }
-        .btn-volt:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(253, 224, 71, 0.4); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: var(--body); font-weight: 600; font-size: 15px; padding: 15px 28px; border-radius: 12px; border: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; white-space: nowrap; }
+        .btn-grad { background: var(--grad); color: #04121a; box-shadow: 0 12px 34px rgba(52, 211, 153, 0.22); }
+        .btn-grad:hover { transform: translateY(-2px); box-shadow: 0 18px 46px rgba(52, 211, 153, 0.34); }
         .btn-ghost { background: rgba(255,255,255,0.04); color: var(--text); border: 1px solid var(--line-2); backdrop-filter: blur(6px); }
-        .btn-ghost:hover { border-color: var(--blue-lite); color: #fff; transform: translateY(-2px); }
+        .btn-ghost:hover { border-color: var(--green); color: #fff; transform: translateY(-2px); }
 
-        /* ---------- Logo ---------- */
+        /* Logo */
         .logo { display: inline-flex; align-items: center; gap: 12px; }
-        .logo-mark { width: 30px; height: 34px; display: grid; place-items: center; }
-        .logo-mark svg { width: 27px; height: 27px; color: var(--volt); filter: drop-shadow(0 0 10px rgba(253, 224, 71, 0.55)); }
-        .logo-word { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: 0.19em; color: #fff; }
-        .logo-word span { color: var(--volt); }
+        .logo-mark { width: 34px; height: 34px; display: grid; place-items: center; }
+        .logo-mark svg { width: 30px; height: 30px; filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.5)); }
+        .logo-word { font-family: var(--display); font-weight: 700; font-size: 20px; letter-spacing: 0.18em; color: #fff; }
+        .logo-word span { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 
-        /* ---------- Header ---------- */
+        /* Header */
         .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease; border-bottom: 1px solid transparent; }
-        .header.scrolled { background: rgba(7, 10, 18, 0.82); backdrop-filter: blur(16px); border-bottom-color: var(--line); }
-        .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 78px; }
+        .header.scrolled { background: rgba(6, 9, 15, 0.82); backdrop-filter: blur(16px); border-bottom-color: var(--line); }
+        .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 80px; }
         .nav-links { display: flex; align-items: center; gap: 32px; }
         .nav-links a { font-size: 14.5px; color: var(--muted); font-weight: 500; transition: color .2s; }
         .nav-links a:hover { color: #fff; }
         .header-right { display: flex; align-items: center; gap: 18px; }
         .demo-tag { font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2); display: inline-flex; align-items: center; gap: 6px; }
-        .demo-tag:hover { color: var(--blue-lite); }
+        .demo-tag:hover { color: var(--green-lite); }
         .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
-        .nav-toggle span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
+        .nav-toggle span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
 
-        /* ---------- Hero ---------- */
-        .hero { position: relative; min-height: 94vh; display: flex; align-items: flex-end; padding: 150px 0 64px; overflow: hidden; }
-        .hero-media { position: absolute; inset: 0; z-index: 0; }
-        .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 68% center; }
-        .hero-media::after { content: ''; position: absolute; inset: 0; background:
-            linear-gradient(96deg, rgba(7,10,18,0.97) 0%, rgba(7,10,18,0.9) 34%, rgba(7,10,18,0.55) 62%, rgba(7,10,18,0.7) 100%),
-            linear-gradient(to top, rgba(7,10,18,0.96) 4%, rgba(7,10,18,0.15) 48%, rgba(7,10,18,0.55) 100%); }
-        .hero-spark { position: absolute; top: -10%; right: -8%; width: 620px; height: 620px; z-index: 1; background: radial-gradient(circle, rgba(59,130,246,0.28), transparent 60%); filter: blur(20px); }
+        /* Hero */
+        .hero { position: relative; min-height: 100vh; display: flex; align-items: center; padding: 130px 0 40px; overflow: hidden; border-bottom: 4px solid transparent; border-image: var(--grad) 1; }
+        .hero::before { content: ''; position: absolute; top: -12%; right: 4%; width: 620px; height: 620px; background: radial-gradient(circle, rgba(52,211,153,0.16), transparent 62%); filter: blur(24px); z-index: 0; }
+        .hero::after { content: ''; position: absolute; bottom: -18%; left: -8%; width: 560px; height: 560px; background: radial-gradient(circle, rgba(59,130,246,0.14), transparent 62%); filter: blur(24px); z-index: 0; }
         .hero .wrap { position: relative; z-index: 2; width: 100%; }
-        .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 50px; align-items: end; }
-        .hero h1 { font-size: clamp(46px, 6.6vw, 88px); margin: 24px 0 0; }
-        .hero h1 .volt { color: var(--volt); }
-        .hero-sub { font-size: 18.5px; color: #c3cde0; max-width: 500px; margin: 26px 0 34px; }
+        .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 30px; align-items: center; }
+        .hero h1 { font-size: clamp(56px, 9vw, 130px); margin: 22px 0 0; color: #fff; }
+        .hero h1 .line3 { display: block; margin-top: 4px; }
+        .hero-sub { font-size: 18.5px; color: #c3cde0; max-width: 500px; margin: 28px 0 34px; }
         .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-        .hero-trust { display: flex; gap: 34px; margin-top: 44px; flex-wrap: wrap; }
-        .hero-trust .t b { font-family: var(--display); font-size: 27px; color: #fff; display: block; }
+        .hero-trust { display: flex; gap: 36px; margin-top: 46px; flex-wrap: wrap; }
+        .hero-trust .t b { font-family: var(--display); font-weight: 700; font-size: 27px; color: #fff; display: block; }
         .hero-trust .t span { font-size: 13px; color: var(--muted); letter-spacing: .03em; }
 
-        .call-card { background: linear-gradient(165deg, rgba(20,30,52,0.92), rgba(11,16,32,0.92)); backdrop-filter: blur(10px); border: 1px solid var(--line-2); border-radius: 20px; padding: 28px; box-shadow: 0 34px 80px rgba(0,0,0,.55); position: relative; overflow: hidden; }
-        .call-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--volt)); }
-        .call-card .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: #4ade80; background: rgba(74, 222, 128, .1); padding: 6px 12px; border-radius: 999px; }
-        .call-card .badge .live { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80; animation: pulse 1.6s infinite; }
-        .call-card h3 { font-size: 21px; margin: 16px 0 4px; }
-        .call-card .num { font-family: var(--display); font-size: 29px; color: var(--volt); margin: 6px 0 2px; }
-        .call-card .sub { font-size: 13.5px; color: var(--muted); }
-        .call-card .rows { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 12px; }
-        .call-card .row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #c3cde0; }
-        .call-card .row svg { width: 17px; height: 17px; color: var(--blue-lite); flex-shrink: 0; }
-        .call-card .btn { width: 100%; margin-top: 20px; }
+        /* Big bolt */
+        .hero-bolt { position: relative; display: grid; place-items: center; }
+        .hero-bolt svg { width: 100%; max-width: 440px; height: auto; filter: drop-shadow(0 22px 60px rgba(52, 211, 153, 0.28)); }
 
-        /* ---------- Section shells ---------- */
-        .band { padding: 104px 0; position: relative; z-index: 2; }
+        /* Section shells */
+        .band { padding: 108px 0; position: relative; z-index: 2; }
         .band-alt { background: var(--bg-2); }
-        .sec-head { max-width: 660px; margin-bottom: 56px; }
+        .sec-head { max-width: 760px; margin-bottom: 56px; }
         .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-        .sec-head h2 { font-size: clamp(32px, 4.2vw, 50px); margin: 16px 0 14px; }
+        .sec-head h2 { font-family: var(--poster); font-weight: 400; text-transform: uppercase; line-height: 0.96; letter-spacing: 0.01em; font-size: clamp(38px, 5.2vw, 66px); margin: 16px 0 16px; color: #fff; }
         .sec-head p { color: var(--muted); font-size: 17px; }
 
         /* Trust strip */
         .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 0; position: relative; z-index: 2; background: var(--bg); }
         .trust-strip .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
         .trust-strip .item { display: flex; align-items: center; gap: 11px; font-size: 14.5px; color: var(--muted); font-weight: 500; }
-        .trust-strip .item svg { width: 20px; height: 20px; color: var(--volt); }
+        .trust-strip .item svg { width: 20px; height: 20px; color: var(--green); }
 
-        /* ---------- Services ---------- */
+        /* Services */
         .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .svc { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 32px; transition: transform .25s ease, border-color .25s ease, background .25s ease; position: relative; }
+        .svc { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 32px; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
         .svc:hover { transform: translateY(-6px); border-color: var(--line-2); background: var(--card-2); }
-        .svc .ic { width: 54px; height: 54px; border-radius: 14px; background: rgba(59, 130, 246, .12); display: grid; place-items: center; margin-bottom: 22px; transition: .25s; }
-        .svc .ic svg { width: 26px; height: 26px; color: var(--blue-lite); transition: .25s; }
-        .svc:hover .ic { background: rgba(253, 224, 71, .14); }
-        .svc:hover .ic svg { color: var(--volt); }
-        .svc h3 { font-size: 20px; margin-bottom: 10px; }
+        .svc .ic { width: 54px; height: 54px; border-radius: 14px; background: var(--grad-soft); display: grid; place-items: center; margin-bottom: 22px; }
+        .svc .ic svg { width: 26px; height: 26px; color: var(--green-lite); }
+        .svc h3 { font-family: var(--display); font-weight: 700; font-size: 20px; margin-bottom: 10px; letter-spacing: -0.01em; }
         .svc p { color: var(--muted); font-size: 14.5px; }
 
-        /* ---------- Split (Why) ---------- */
+        /* Split (Why) */
         .split { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 60px; align-items: center; }
         .split-media { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid var(--line); }
         .split-media img { width: 100%; height: 100%; object-fit: cover; }
-        .split-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,10,18,0.7), transparent 45%); }
-        .split-badge { position: absolute; left: 22px; bottom: 22px; z-index: 2; background: rgba(11,16,32,0.82); backdrop-filter: blur(8px); border: 1px solid var(--line-2); border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 14px; }
-        .split-badge .bignum { font-family: var(--display); font-size: 34px; font-weight: 700; color: var(--volt); line-height: 1; }
+        .split-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(6,9,15,0.72), transparent 45%); }
+        .split-badge { position: absolute; left: 22px; bottom: 22px; z-index: 2; background: rgba(10,15,24,0.82); backdrop-filter: blur(8px); border: 1px solid var(--line-2); border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 14px; }
+        .split-badge .bignum { font-family: var(--poster); font-size: 40px; line-height: 0.9; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
         .split-badge span { font-size: 13px; color: var(--muted); line-height: 1.3; }
         .val-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 30px; margin-top: 34px; }
-        .val .n { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--volt); letter-spacing: .1em; }
-        .val h3 { font-size: 18px; margin: 12px 0 8px; }
+        .val .n { font-family: var(--poster); font-size: 22px; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .val h3 { font-family: var(--display); font-weight: 700; font-size: 18px; margin: 10px 0 8px; }
         .val p { color: var(--muted); font-size: 14px; }
         .val { padding-top: 20px; border-top: 2px solid var(--line-2); }
 
-        /* ---------- Showcase (photo tiles) ---------- */
+        /* Showcase */
         .show-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .show-tile { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 3 / 4; border: 1px solid var(--line); }
         .show-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.22,1,.36,1); }
         .show-tile:hover img { transform: scale(1.06); }
-        .show-tile .cap { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; background: linear-gradient(to top, rgba(6,9,16,0.94) 8%, rgba(6,9,16,0.35) 46%, transparent 72%); }
-        .show-tile .cap .tag { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--volt); font-weight: 600; margin-bottom: 8px; }
-        .show-tile .cap h3 { font-size: 22px; margin-bottom: 8px; }
+        .show-tile .cap { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; background: linear-gradient(to top, rgba(4,7,12,0.95) 8%, rgba(4,7,12,0.35) 46%, transparent 72%); }
+        .show-tile .cap .tag { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 600; margin-bottom: 10px; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .show-tile .cap h3 { font-family: var(--display); font-weight: 700; font-size: 22px; margin-bottom: 8px; }
         .show-tile .cap p { font-size: 13.5px; color: #c3cde0; opacity: .92; }
 
-        /* ---------- Reviews ---------- */
+        /* Reviews */
         .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .rev { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 30px; }
-        .rev .stars { color: var(--volt); font-size: 16px; letter-spacing: 2px; margin-bottom: 16px; }
+        .rev .stars { color: var(--green); font-size: 16px; letter-spacing: 2px; margin-bottom: 16px; }
         .rev p { font-size: 15px; color: var(--text); margin-bottom: 20px; }
         .rev .who { font-size: 14px; font-weight: 600; }
         .rev .who span { display: block; font-weight: 400; color: var(--muted-2); font-size: 13px; margin-top: 2px; }
 
-        /* ---------- CTA band (sparks) ---------- */
-        .cta-band { position: relative; padding: 128px 0; overflow: hidden; text-align: center; z-index: 2; }
+        /* CTA band */
+        .cta-band { position: relative; padding: 132px 0; overflow: hidden; text-align: center; z-index: 2; }
         .cta-band-media { position: absolute; inset: 0; z-index: 0; }
-        .cta-band-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-        .cta-band-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,10,18,0.94), rgba(7,10,18,0.78) 50%, rgba(7,10,18,0.94)); }
+        .cta-band-media img { width: 100%; height: 100%; object-fit: cover; }
+        .cta-band-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(6,9,15,0.95), rgba(6,9,15,0.78) 50%, rgba(6,9,15,0.95)); }
         .cta-band .wrap { position: relative; z-index: 2; }
-        .cta-band h2 { font-size: clamp(34px, 4.6vw, 56px); margin-bottom: 18px; max-width: 760px; margin-left: auto; margin-right: auto; }
-        .cta-band p { color: #c3cde0; font-size: 18px; max-width: 560px; margin: 0 auto 34px; }
+        .cta-band h2 { font-family: var(--poster); font-weight: 400; text-transform: uppercase; line-height: 0.96; font-size: clamp(40px, 5.6vw, 74px); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; color: #fff; }
+        .cta-band p { color: #c3cde0; font-size: 18px; max-width: 580px; margin: 0 auto 34px; }
         .cta-band .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
-        /* ---------- FAQ ---------- */
+        /* FAQ */
         .faq { max-width: 800px; margin: 0 auto; }
         .qa { border-bottom: 1px solid var(--line); }
         .qa button { width: 100%; text-align: left; background: none; border: none; cursor: pointer; color: var(--text); font-family: var(--display); font-size: 18px; font-weight: 600; padding: 24px 40px 24px 0; position: relative; }
-        .qa button::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; color: var(--blue-lite); transition: transform .3s; font-family: var(--body); }
+        .qa button::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; color: var(--green); transition: transform .3s; font-family: var(--body); }
         .qa.open button::after { content: '−'; }
         .qa .a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
         .qa .a p { color: var(--muted); font-size: 15px; padding-bottom: 24px; }
 
-        /* ---------- Quote ---------- */
+        /* Quote */
         .quote-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
-        .quote-info h2 { font-size: clamp(30px, 4vw, 44px); margin: 16px 0 16px; }
+        .quote-info h2 { font-family: var(--poster); font-weight: 400; text-transform: uppercase; line-height: 0.96; font-size: clamp(34px, 4.4vw, 54px); margin: 16px 0 18px; color: #fff; }
         .quote-info p { color: var(--muted); font-size: 16px; margin-bottom: 28px; }
         .quote-info .line { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-size: 15.5px; }
-        .quote-info .line svg { width: 20px; height: 20px; color: var(--volt); flex-shrink: 0; }
+        .quote-info .line svg { width: 20px; height: 20px; color: var(--green); flex-shrink: 0; }
         .areas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
         .chip { border: 1px solid var(--line-2); border-radius: 999px; padding: 9px 16px; font-size: 13.5px; color: var(--muted); transition: .2s; }
-        .chip:hover { border-color: var(--blue-lite); color: #fff; }
+        .chip:hover { border-color: var(--green); color: #fff; }
         form.quote { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 34px; }
         .fld { margin-bottom: 16px; }
         .fld label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 7px; font-weight: 500; }
         .fld input, .fld select, .fld textarea { width: 100%; background: var(--bg); border: 1px solid var(--line-2); border-radius: 11px; padding: 13px 15px; color: var(--text); font-family: var(--body); font-size: 15px; transition: border-color .2s; }
-        .fld input:focus, .fld select:focus, .fld textarea:focus { outline: none; border-color: var(--blue); }
-        .fld select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%239aa7c2' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 15px center; }
+        .fld input:focus, .fld select:focus, .fld textarea:focus { outline: none; border-color: var(--green); }
+        .fld select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%2398a6c0' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 15px center; }
         .fld-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
         form.quote .btn { width: 100%; margin-top: 8px; }
         .form-ok { display: none; text-align: center; padding: 30px 10px; }
         .form-ok.show { display: block; }
-        .form-ok .check { width: 60px; height: 60px; border-radius: 50%; background: rgba(74,222,128,.12); display: grid; place-items: center; margin: 0 auto 18px; }
-        .form-ok .check svg { width: 30px; height: 30px; color: #4ade80; }
-        .form-ok h3 { font-size: 22px; margin-bottom: 10px; }
+        .form-ok .check { width: 60px; height: 60px; border-radius: 50%; background: var(--grad-soft); display: grid; place-items: center; margin: 0 auto 18px; }
+        .form-ok .check svg { width: 30px; height: 30px; color: var(--green); }
+        .form-ok h3 { font-family: var(--display); font-weight: 700; font-size: 22px; margin-bottom: 10px; }
         .form-ok p { color: var(--muted); font-size: 14.5px; }
         .form-note { font-size: 12.5px; color: var(--muted-2); text-align: center; margin-top: 14px; }
 
-        /* ---------- Footer ---------- */
-        footer { background: #05070d; border-top: 1px solid var(--line); padding: 64px 0 30px; position: relative; z-index: 2; }
+        /* Footer */
+        footer { background: #04060b; border-top: 1px solid var(--line); padding: 64px 0 30px; position: relative; z-index: 2; }
         .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
         .foot-brand p { color: var(--muted); font-size: 14.5px; max-width: 340px; margin-top: 18px; }
         .foot-col h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted-2); margin-bottom: 16px; font-family: var(--body); }
         .foot-col a, .foot-col p { display: block; color: var(--muted); font-size: 14.5px; margin-bottom: 10px; }
-        .foot-col a:hover { color: var(--blue-lite); }
-        .disclaimer { background: rgba(59,130,246,.06); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; margin-bottom: 36px; }
+        .foot-col a:hover { color: var(--green-lite); }
+        .disclaimer { background: var(--grad-soft); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; margin-bottom: 36px; }
         .disclaimer p { font-size: 13.5px; color: var(--muted); }
-        .disclaimer b { color: var(--blue-lite); }
+        .disclaimer b { color: var(--green-lite); }
         .foot-bottom { border-top: 1px solid var(--line); padding-top: 26px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
         .foot-bottom p { font-size: 13px; color: var(--muted-2); }
-        .foot-bottom a { color: var(--blue-lite); }
+        .foot-bottom a { color: var(--green-lite); }
 
-        /* ---------- Mobile call bar ---------- */
-        .callbar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; display: none; gap: 10px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(7,10,18,.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+        /* Mobile call bar */
+        .callbar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; display: none; gap: 10px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(6,9,15,.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
         .callbar .btn { flex: 1; padding: 13px; }
 
-        /* ---------- Reveal ---------- */
+        /* Reveal */
         .reveal { transition: opacity .8s ease, transform .8s cubic-bezier(.22,1,.36,1); }
         .js .reveal { opacity: 0; transform: translateY(30px); }
         .js .reveal.in { opacity: 1; transform: none; }
 
-        /* ---------- Responsive ---------- */
         @media (max-width: 980px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-            .call-card { max-width: 440px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+            .hero-bolt { order: -1; }
+            .hero-bolt svg { max-width: 240px; }
+            .hero h1 { font-size: clamp(52px, 13vw, 96px); }
             .svc-grid, .rev-grid, .show-grid { grid-template-columns: repeat(2, 1fr); }
             .split { grid-template-columns: 1fr; gap: 40px; }
             .split-media { aspect-ratio: 16 / 11; max-height: 440px; }
@@ -251,21 +241,28 @@
             body { padding-bottom: 74px; }
             .svc-grid, .rev-grid, .show-grid, .val-grid, .foot-grid { grid-template-columns: 1fr; }
             .fld-row { grid-template-columns: 1fr; }
-            .band { padding: 74px 0; }
-            .hero { min-height: 92vh; padding: 130px 0 48px; }
+            .band { padding: 76px 0; }
+            .hero { min-height: auto; padding: 120px 0 60px; }
             .trust-strip .wrap { justify-content: flex-start; gap: 18px; }
-            .mobile-open { display: flex !important; flex-direction: column; position: absolute; top: 78px; left: 0; right: 0; background: rgba(7,10,18,.98); backdrop-filter: blur(14px); padding: 20px 28px; gap: 18px; border-bottom: 1px solid var(--line); }
+            .mobile-open { display: flex !important; flex-direction: column; position: absolute; top: 80px; left: 0; right: 0; background: rgba(6,9,15,.98); backdrop-filter: blur(14px); padding: 20px 28px; gap: 18px; border-bottom: 1px solid var(--line); }
         }
     </style>
 </head>
 <body>
     <div class="grain"></div>
 
+    <!-- SVG gradient defs (shared) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+        <linearGradient id="voltGrad" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#34d399"/><stop offset="0.5" stop-color="#22c3c9"/><stop offset="1" stop-color="#3b82f6"/>
+        </linearGradient>
+    </defs></svg>
+
     <!-- Header -->
     <header class="header" id="header">
         <div class="wrap">
             <a href="#top" class="logo">
-                <span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 2 4 13.9h5.5L8 22l10.4-11.9H12.9L14.6 2z"/></svg></span>
+                <span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M13.6 2 4 13.9h5.5L8 22l10.4-11.9H12.9L14.6 2z" fill="url(#voltGrad)"/></svg></span>
                 <span class="logo-word">VOLT<span>WAY</span></span>
             </a>
             <nav class="nav-links" id="navLinks">
@@ -279,7 +276,7 @@
                 <a href="/" class="demo-tag" title="Back to AmplifyX Solutions">Demo by AmplifyX
                     <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </a>
-                <a href="tel:0865550100" class="btn btn-volt">Call 24/7</a>
+                <a href="tel:0865550100" class="btn btn-grad">Call 24/7</a>
                 <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
             </div>
         </div>
@@ -287,18 +284,14 @@
 
     <!-- Hero -->
     <section class="hero" id="top">
-        <div class="hero-media">
-            <img src="assets/img/hero-electrician.jpg" alt="Licensed Voltway electrician working on a switchboard">
-        </div>
-        <div class="hero-spark"></div>
         <div class="wrap">
             <div class="hero-grid">
                 <div>
-                    <span class="eyebrow"><span class="dot"></span> A Concept Build by AmplifyX Solutions</span>
-                    <h1>Perth's <span class="volt">rapid-response</span> electricians.</h1>
+                    <span class="eyebrow"><span class="dot"></span> Voltway Electrical · Perth, WA</span>
+                    <h1 class="poster">Rapid-response <span class="line3 grad-text">electricians.</span></h1>
                     <p class="hero-sub">Power out? Switchboard sparking? Booking a solar install? Voltway gets a licensed electrician to your door — fast, upfront, and done right the first time.</p>
                     <div class="hero-cta">
-                        <a href="#contact" class="btn btn-volt">Get a Fast Quote</a>
+                        <a href="#contact" class="btn btn-grad">Get a Fast Quote</a>
                         <a href="tel:0865550100" class="btn btn-ghost">
                             <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             (08) 6555 0100
@@ -310,17 +303,10 @@
                         <div class="t"><b>24 / 7</b><span>Emergency callouts</span></div>
                     </div>
                 </div>
-                <div class="call-card">
-                    <span class="badge"><span class="live"></span> Electricians on call now</span>
-                    <h3>Power emergency?</h3>
-                    <div class="num">(08) 6555 0100</div>
-                    <div class="sub">Metro-wide · 7 days · no fix, no fee callout</div>
-                    <div class="rows">
-                        <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Licensed & fully insured</div>
-                        <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Fixed-price quote before we start</div>
-                        <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Workmanship guarantee on every job</div>
-                    </div>
-                    <a href="#contact" class="btn btn-volt">Book an electrician</a>
+                <div class="hero-bolt">
+                    <svg viewBox="0 0 300 440" fill="none" aria-hidden="true">
+                        <path d="M182 8 66 250h74L104 432 250 150h-78L204 8z" fill="url(#voltGrad)"/>
+                    </svg>
                 </div>
             </div>
         </div>
@@ -341,7 +327,7 @@
         <div class="wrap">
             <div class="sec-head reveal">
                 <span class="eyebrow"><span class="dot"></span> What we do</span>
-                <h2>Every job, big or small — done to code.</h2>
+                <h2>Every job, big or small — <span class="grad-text">done to code.</span></h2>
                 <p>From a flickering downlight to a full switchboard and solar upgrade, Voltway's licensed electricians cover it all across the Perth metro.</p>
             </div>
             <div class="svc-grid">
@@ -392,7 +378,7 @@
                 </div>
                 <div class="reveal">
                     <span class="eyebrow"><span class="dot"></span> Why Voltway</span>
-                    <h2 class="sec-head" style="margin-bottom:8px; font-size:clamp(30px,4vw,46px)">The electrician you'd recommend to your mum.</h2>
+                    <h2 class="poster" style="font-size:clamp(34px,4.6vw,58px); line-height:0.96; margin:14px 0 12px; color:#fff;">The sparky you'd <span class="grad-text">recommend.</span></h2>
                     <p style="color:var(--muted); font-size:16px; max-width:520px;">No mess, no jargon, no nasty invoice at the end. Just licensed electricians who turn up when they say they will and leave the job spotless.</p>
                     <div class="val-grid">
                         <div class="val"><span class="n">01</span><h3>Rapid Response</h3><p>On-site within 60 minutes across the metro — your power problem is our emergency too.</p></div>
@@ -410,7 +396,7 @@
         <div class="wrap">
             <div class="sec-head reveal">
                 <span class="eyebrow"><span class="dot"></span> Our work</span>
-                <h2>What we get called for most.</h2>
+                <h2>What we get <span class="grad-text">called for most.</span></h2>
                 <p>A snapshot of the jobs Voltway takes on across Perth — from 9pm emergencies to full solar upgrades.</p>
             </div>
             <div class="show-grid">
@@ -435,7 +421,7 @@
         <div class="wrap">
             <div class="sec-head center reveal">
                 <span class="eyebrow" style="justify-content:center"><span class="dot"></span> What locals say</span>
-                <h2>Rated 4.9 out of 5.</h2>
+                <h2>Rated <span class="grad-text">4.9 out of 5.</span></h2>
                 <p>What a Voltway review page could look like — three fictional customers, one very real design standard.</p>
             </div>
             <div class="rev-grid">
@@ -462,10 +448,10 @@
     <section class="cta-band">
         <div class="cta-band-media"><img src="assets/img/sparks.jpg" alt=""></div>
         <div class="wrap">
-            <h2>Power's out? We're already on our way.</h2>
+            <h2>Power's out? We're <span class="grad-text">already on our way.</span></h2>
             <p>Real electricians, answering the phone 24/7 across the Perth metro. Get a fixed-price quote or an emergency callout now.</p>
             <div class="actions">
-                <a href="tel:0865550100" class="btn btn-volt">Call (08) 6555 0100</a>
+                <a href="tel:0865550100" class="btn btn-grad">Call (08) 6555 0100</a>
                 <a href="#contact" class="btn btn-ghost">Request a Quote</a>
             </div>
         </div>
@@ -476,7 +462,7 @@
         <div class="wrap">
             <div class="sec-head center reveal">
                 <span class="eyebrow" style="justify-content:center"><span class="dot"></span> Good to know</span>
-                <h2>Questions, answered.</h2>
+                <h2>Questions, <span class="grad-text">answered.</span></h2>
             </div>
             <div class="faq">
                 <div class="qa reveal"><button>Are you really available 24/7?</button><div class="a"><p>Yes — genuine round-the-clock emergency callouts, seven days a week including public holidays. Call and you'll speak to a real person, not a machine.</p></div></div>
@@ -493,7 +479,7 @@
             <div class="quote-grid">
                 <div class="quote-info reveal">
                     <span class="eyebrow"><span class="dot"></span> Get a quote</span>
-                    <h2>Tell us the job. We'll call you back.</h2>
+                    <h2>Tell us the job. <span class="grad-text">We'll call you back.</span></h2>
                     <p>Send a few details and a Voltway electrician will call you back — usually within the hour during business hours — with a fixed-price quote or a booking time.</p>
                     <div class="line"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> (08) 6555 0100 — 24/7</div>
                     <div class="line"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2"/><path d="m22 6-10 7L2 6" stroke="currentColor" stroke-width="2"/></svg> hello@voltway.example</div>
@@ -523,7 +509,7 @@
                             </div>
                         </div>
                         <div class="fld"><label for="q-msg">Tell us about the job</label><textarea id="q-msg" rows="4" placeholder="A quick description of what you need..."></textarea></div>
-                        <button type="submit" class="btn btn-volt">Request My Quote</button>
+                        <button type="submit" class="btn btn-grad">Request My Quote</button>
                         <p class="form-note">Design demo — submitting shows a confirmation but sends nothing.</p>
                     </form>
                     <div class="form-ok" id="formOk">
@@ -545,7 +531,7 @@
             <div class="foot-grid">
                 <div class="foot-brand">
                     <a href="#top" class="logo">
-                        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 2 4 13.9h5.5L8 22l10.4-11.9H12.9L14.6 2z"/></svg></span>
+                        <span class="logo-mark"><svg viewBox="0 0 24 24"><path d="M13.6 2 4 13.9h5.5L8 22l10.4-11.9H12.9L14.6 2z" fill="url(#voltGrad)"/></svg></span>
                         <span class="logo-word">VOLT<span>WAY</span></span>
                     </a>
                     <p>Perth's rapid-response electricians — a concept build showing how a modern trade website should look, feel and convert.</p>
@@ -577,7 +563,7 @@
     <!-- Mobile call bar -->
     <div class="callbar">
         <a href="tel:0865550100" class="btn btn-ghost">Call 24/7</a>
-        <a href="#contact" class="btn btn-volt">Get a Quote</a>
+        <a href="#contact" class="btn btn-grad">Get a Quote</a>
     </div>
 
     <script>
