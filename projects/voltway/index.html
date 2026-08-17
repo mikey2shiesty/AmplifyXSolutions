@@ -7,7 +7,6 @@
     <meta name="robots" content="noindex, follow">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0e1a'/%3E%3Cpath d='M17.5 5 9 17.5h5.5L13 27l9-13h-5.5z' fill='%23fde047'/%3E%3C/svg%3E">
 
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Voltway Electrical — Perth's Rapid-Response Electricians">
     <meta property="og:description" content="A concept build by AmplifyX Solutions — a design showcase for a modern Perth electrical business.">
@@ -22,162 +21,143 @@
 
     <style>
         :root {
-            --bg: #0a0e1a;
-            --bg-2: #0e1424;
+            --bg: #070a12;
+            --bg-2: #0b1020;
             --card: #111a2e;
             --card-2: #16213a;
             --line: rgba(255, 255, 255, 0.08);
-            --line-2: rgba(255, 255, 255, 0.14);
+            --line-2: rgba(255, 255, 255, 0.15);
             --text: #eef2fb;
             --muted: #9aa7c2;
             --muted-2: #6b7898;
             --blue: #3b82f6;
             --blue-lite: #60a5fa;
             --volt: #fde047;
-            --volt-deep: #facc15;
+            --volt-deep: #f5c518;
             --display: 'Space Grotesk', sans-serif;
             --body: 'Inter', sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: var(--body);
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-        h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+        body { font-family: var(--body); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 28px; }
+        h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.04; letter-spacing: -0.02em; }
         a { color: inherit; text-decoration: none; }
         img { max-width: 100%; display: block; }
 
-        .eyebrow {
-            display: inline-flex; align-items: center; gap: 10px;
-            font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
-            text-transform: uppercase; color: var(--blue-lite);
-        }
+        /* Film grain over everything */
+        .grain { position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: 0.045; mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+        .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-lite); }
         .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--volt); box-shadow: 0 0 12px var(--volt); animation: pulse 2s infinite; }
         @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
 
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-            font-family: var(--body); font-weight: 600; font-size: 15px;
-            padding: 15px 26px; border-radius: 999px; border: none; cursor: pointer;
-            transition: transform .2s ease, box-shadow .2s ease, background .2s ease; white-space: nowrap;
-        }
-        .btn-volt { background: var(--volt); color: #1a1400; box-shadow: 0 8px 30px rgba(253, 224, 71, 0.28); }
-        .btn-volt:hover { transform: translateY(-2px); box-shadow: 0 12px 38px rgba(253, 224, 71, 0.4); }
-        .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line-2); }
-        .btn-ghost:hover { border-color: var(--blue-lite); color: var(--blue-lite); transform: translateY(-2px); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; font-family: var(--body); font-weight: 600; font-size: 15px; padding: 15px 28px; border-radius: 12px; border: none; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; white-space: nowrap; }
+        .btn-volt { background: var(--volt); color: #1a1400; box-shadow: 0 10px 34px rgba(253, 224, 71, 0.26); }
+        .btn-volt:hover { transform: translateY(-2px); box-shadow: 0 16px 44px rgba(253, 224, 71, 0.4); }
+        .btn-ghost { background: rgba(255,255,255,0.04); color: var(--text); border: 1px solid var(--line-2); backdrop-filter: blur(6px); }
+        .btn-ghost:hover { border-color: var(--blue-lite); color: #fff; transform: translateY(-2px); }
+
+        /* ---------- Logo ---------- */
+        .logo { display: inline-flex; align-items: center; gap: 12px; }
+        .logo-mark { width: 30px; height: 34px; display: grid; place-items: center; }
+        .logo-mark svg { width: 27px; height: 27px; color: var(--volt); filter: drop-shadow(0 0 10px rgba(253, 224, 71, 0.55)); }
+        .logo-word { font-family: var(--display); font-weight: 700; font-size: 19px; letter-spacing: 0.19em; color: #fff; }
+        .logo-word span { color: var(--volt); }
 
         /* ---------- Header ---------- */
-        .header {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease;
-            border-bottom: 1px solid transparent;
-        }
-        .header.scrolled { background: rgba(10, 14, 26, 0.85); backdrop-filter: blur(14px); border-bottom-color: var(--line); }
-        .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-        .logo { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 21px; letter-spacing: -0.02em; }
-        .logo .bolt { width: 34px; height: 34px; border-radius: 9px; background: linear-gradient(135deg, var(--blue), #1e40af); display: grid; place-items: center; box-shadow: 0 0 22px rgba(59, 130, 246, 0.45); }
-        .logo .bolt svg { width: 18px; height: 18px; }
-        .logo b { color: var(--volt); }
-        .nav-links { display: flex; align-items: center; gap: 30px; }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background .3s ease, border-color .3s ease, backdrop-filter .3s ease; border-bottom: 1px solid transparent; }
+        .header.scrolled { background: rgba(7, 10, 18, 0.82); backdrop-filter: blur(16px); border-bottom-color: var(--line); }
+        .header .wrap { display: flex; align-items: center; justify-content: space-between; height: 78px; }
+        .nav-links { display: flex; align-items: center; gap: 32px; }
         .nav-links a { font-size: 14.5px; color: var(--muted); font-weight: 500; transition: color .2s; }
-        .nav-links a:hover { color: var(--text); }
-        .header-right { display: flex; align-items: center; gap: 16px; }
-        .demo-tag { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); display: inline-flex; align-items: center; gap: 6px; }
+        .nav-links a:hover { color: #fff; }
+        .header-right { display: flex; align-items: center; gap: 18px; }
+        .demo-tag { font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2); display: inline-flex; align-items: center; gap: 6px; }
         .demo-tag:hover { color: var(--blue-lite); }
         .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
         .nav-toggle span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: .3s; }
 
         /* ---------- Hero ---------- */
-        .hero { position: relative; padding: 170px 0 90px; overflow: hidden; }
-        .hero-bg { position: absolute; inset: 0; z-index: 0; }
-        .hero-bg::before {
-            content: ''; position: absolute; top: -20%; right: -10%; width: 750px; height: 750px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.22), transparent 62%); filter: blur(30px);
-        }
-        .hero-bg::after {
-            content: ''; position: absolute; bottom: -30%; left: -15%; width: 680px; height: 680px;
-            background: radial-gradient(circle, rgba(253, 224, 71, 0.10), transparent 60%); filter: blur(30px);
-        }
-        .grid-lines { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 100%); opacity: .5; }
-        .hero .wrap { position: relative; z-index: 2; }
-        .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
-        .hero h1 { font-size: clamp(42px, 6.2vw, 82px); margin: 22px 0 0; }
+        .hero { position: relative; min-height: 94vh; display: flex; align-items: flex-end; padding: 150px 0 64px; overflow: hidden; }
+        .hero-media { position: absolute; inset: 0; z-index: 0; }
+        .hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 68% center; }
+        .hero-media::after { content: ''; position: absolute; inset: 0; background:
+            linear-gradient(96deg, rgba(7,10,18,0.97) 0%, rgba(7,10,18,0.9) 34%, rgba(7,10,18,0.55) 62%, rgba(7,10,18,0.7) 100%),
+            linear-gradient(to top, rgba(7,10,18,0.96) 4%, rgba(7,10,18,0.15) 48%, rgba(7,10,18,0.55) 100%); }
+        .hero-spark { position: absolute; top: -10%; right: -8%; width: 620px; height: 620px; z-index: 1; background: radial-gradient(circle, rgba(59,130,246,0.28), transparent 60%); filter: blur(20px); }
+        .hero .wrap { position: relative; z-index: 2; width: 100%; }
+        .hero-grid { display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 50px; align-items: end; }
+        .hero h1 { font-size: clamp(46px, 6.6vw, 88px); margin: 24px 0 0; }
         .hero h1 .volt { color: var(--volt); }
-        .hero h1 .stroke { color: transparent; -webkit-text-stroke: 1.5px var(--blue-lite); }
-        .hero-sub { font-size: 18px; color: var(--muted); max-width: 480px; margin: 26px 0 34px; }
+        .hero-sub { font-size: 18.5px; color: #c3cde0; max-width: 500px; margin: 26px 0 34px; }
         .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
-        .hero-trust { display: flex; gap: 26px; margin-top: 40px; flex-wrap: wrap; }
-        .hero-trust .t { display: flex; flex-direction: column; }
-        .hero-trust .t b { font-family: var(--display); font-size: 26px; color: var(--text); }
-        .hero-trust .t span { font-size: 13px; color: var(--muted-2); letter-spacing: .04em; }
+        .hero-trust { display: flex; gap: 34px; margin-top: 44px; flex-wrap: wrap; }
+        .hero-trust .t b { font-family: var(--display); font-size: 27px; color: #fff; display: block; }
+        .hero-trust .t span { font-size: 13px; color: var(--muted); letter-spacing: .03em; }
 
-        /* Hero visual card */
-        .call-card { background: linear-gradient(160deg, var(--card), var(--bg-2)); border: 1px solid var(--line); border-radius: 22px; padding: 30px; box-shadow: 0 30px 70px rgba(0,0,0,.45); position: relative; overflow: hidden; }
+        .call-card { background: linear-gradient(165deg, rgba(20,30,52,0.92), rgba(11,16,32,0.92)); backdrop-filter: blur(10px); border: 1px solid var(--line-2); border-radius: 20px; padding: 28px; box-shadow: 0 34px 80px rgba(0,0,0,.55); position: relative; overflow: hidden; }
         .call-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--volt)); }
         .call-card .badge { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: #4ade80; background: rgba(74, 222, 128, .1); padding: 6px 12px; border-radius: 999px; }
         .call-card .badge .live { width: 7px; height: 7px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80; animation: pulse 1.6s infinite; }
-        .call-card h3 { font-size: 22px; margin: 18px 0 4px; }
-        .call-card .num { font-family: var(--display); font-size: 30px; color: var(--volt); letter-spacing: -0.01em; margin: 6px 0 2px; }
-        .call-card .sub { font-size: 14px; color: var(--muted); }
-        .call-card .rows { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 18px; display: grid; gap: 13px; }
-        .call-card .row { display: flex; align-items: center; gap: 12px; font-size: 14.5px; color: var(--muted); }
-        .call-card .row svg { width: 18px; height: 18px; color: var(--blue-lite); flex-shrink: 0; }
-        .call-card .btn { width: 100%; margin-top: 22px; }
+        .call-card h3 { font-size: 21px; margin: 16px 0 4px; }
+        .call-card .num { font-family: var(--display); font-size: 29px; color: var(--volt); margin: 6px 0 2px; }
+        .call-card .sub { font-size: 13.5px; color: var(--muted); }
+        .call-card .rows { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 16px; display: grid; gap: 12px; }
+        .call-card .row { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #c3cde0; }
+        .call-card .row svg { width: 17px; height: 17px; color: var(--blue-lite); flex-shrink: 0; }
+        .call-card .btn { width: 100%; margin-top: 20px; }
 
         /* ---------- Section shells ---------- */
-        section { position: relative; }
-        .band { padding: 96px 0; }
+        .band { padding: 104px 0; position: relative; z-index: 2; }
         .band-alt { background: var(--bg-2); }
-        .sec-head { max-width: 640px; margin-bottom: 52px; }
+        .sec-head { max-width: 660px; margin-bottom: 56px; }
         .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
-        .sec-head h2 { font-size: clamp(30px, 4vw, 46px); margin: 16px 0 14px; }
+        .sec-head h2 { font-size: clamp(32px, 4.2vw, 50px); margin: 16px 0 14px; }
         .sec-head p { color: var(--muted); font-size: 17px; }
+
+        /* Trust strip */
+        .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 0; position: relative; z-index: 2; background: var(--bg); }
+        .trust-strip .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+        .trust-strip .item { display: flex; align-items: center; gap: 11px; font-size: 14.5px; color: var(--muted); font-weight: 500; }
+        .trust-strip .item svg { width: 20px; height: 20px; color: var(--volt); }
 
         /* ---------- Services ---------- */
         .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .svc { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 30px; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+        .svc { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 32px; transition: transform .25s ease, border-color .25s ease, background .25s ease; position: relative; }
         .svc:hover { transform: translateY(-6px); border-color: var(--line-2); background: var(--card-2); }
-        .svc .ic { width: 52px; height: 52px; border-radius: 13px; background: rgba(59, 130, 246, .12); display: grid; place-items: center; margin-bottom: 20px; }
-        .svc .ic svg { width: 26px; height: 26px; color: var(--blue-lite); }
+        .svc .ic { width: 54px; height: 54px; border-radius: 14px; background: rgba(59, 130, 246, .12); display: grid; place-items: center; margin-bottom: 22px; transition: .25s; }
+        .svc .ic svg { width: 26px; height: 26px; color: var(--blue-lite); transition: .25s; }
         .svc:hover .ic { background: rgba(253, 224, 71, .14); }
         .svc:hover .ic svg { color: var(--volt); }
-        .svc h3 { font-size: 20px; margin-bottom: 9px; }
+        .svc h3 { font-size: 20px; margin-bottom: 10px; }
         .svc p { color: var(--muted); font-size: 14.5px; }
 
-        /* ---------- Why / values ---------- */
-        .val-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
-        .val .n { font-family: var(--display); font-size: 15px; font-weight: 600; color: var(--volt); letter-spacing: .1em; }
-        .val h3 { font-size: 19px; margin: 14px 0 10px; }
-        .val p { color: var(--muted); font-size: 14.5px; }
-        .val { padding-top: 24px; border-top: 2px solid var(--line-2); }
+        /* ---------- Split (Why) ---------- */
+        .split { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 60px; align-items: center; }
+        .split-media { position: relative; border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid var(--line); }
+        .split-media img { width: 100%; height: 100%; object-fit: cover; }
+        .split-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(7,10,18,0.7), transparent 45%); }
+        .split-badge { position: absolute; left: 22px; bottom: 22px; z-index: 2; background: rgba(11,16,32,0.82); backdrop-filter: blur(8px); border: 1px solid var(--line-2); border-radius: 14px; padding: 16px 20px; display: flex; align-items: center; gap: 14px; }
+        .split-badge .bignum { font-family: var(--display); font-size: 34px; font-weight: 700; color: var(--volt); line-height: 1; }
+        .split-badge span { font-size: 13px; color: var(--muted); line-height: 1.3; }
+        .val-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 30px; margin-top: 34px; }
+        .val .n { font-family: var(--display); font-size: 14px; font-weight: 600; color: var(--volt); letter-spacing: .1em; }
+        .val h3 { font-size: 18px; margin: 12px 0 8px; }
+        .val p { color: var(--muted); font-size: 14px; }
+        .val { padding-top: 20px; border-top: 2px solid var(--line-2); }
 
-        /* ---------- Work gallery ---------- */
-        .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .job { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--card); transition: transform .25s ease; }
-        .job:hover { transform: translateY(-6px); }
-        .job .top { height: 150px; position: relative; display: grid; place-items: center; overflow: hidden; }
-        .job .top svg { width: 46px; height: 46px; color: rgba(255,255,255,.9); position: relative; z-index: 2; }
-        .job .top::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px); background-size: 26px 26px; }
-        .job:nth-child(1) .top { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
-        .job:nth-child(2) .top { background: linear-gradient(135deg, #065f46, #10b981); }
-        .job:nth-child(3) .top { background: linear-gradient(135deg, #7c2d12, #f59e0b); }
-        .job:nth-child(4) .top { background: linear-gradient(135deg, #7f1d1d, #ef4444); }
-        .job:nth-child(5) .top { background: linear-gradient(135deg, #1e1b4b, #6366f1); }
-        .job:nth-child(6) .top { background: linear-gradient(135deg, #164e63, #06b6d4); }
-        .job .body { padding: 20px 22px 24px; }
-        .job .tag { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted-2); }
-        .job h3 { font-size: 17px; margin: 8px 0 8px; }
-        .job p { font-size: 13.5px; color: var(--muted); }
-        .job .meta { margin-top: 14px; display: flex; gap: 16px; font-size: 12.5px; color: var(--blue-lite); }
+        /* ---------- Showcase (photo tiles) ---------- */
+        .show-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .show-tile { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 3 / 4; border: 1px solid var(--line); }
+        .show-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.22,1,.36,1); }
+        .show-tile:hover img { transform: scale(1.06); }
+        .show-tile .cap { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 28px; background: linear-gradient(to top, rgba(6,9,16,0.94) 8%, rgba(6,9,16,0.35) 46%, transparent 72%); }
+        .show-tile .cap .tag { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--volt); font-weight: 600; margin-bottom: 8px; }
+        .show-tile .cap h3 { font-size: 22px; margin-bottom: 8px; }
+        .show-tile .cap p { font-size: 13.5px; color: #c3cde0; opacity: .92; }
 
         /* ---------- Reviews ---------- */
         .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -187,13 +167,18 @@
         .rev .who { font-size: 14px; font-weight: 600; }
         .rev .who span { display: block; font-weight: 400; color: var(--muted-2); font-size: 13px; margin-top: 2px; }
 
-        /* ---------- Areas ---------- */
-        .areas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-        .chip { border: 1px solid var(--line-2); border-radius: 999px; padding: 10px 18px; font-size: 14px; color: var(--muted); transition: .2s; }
-        .chip:hover { border-color: var(--blue-lite); color: var(--text); }
+        /* ---------- CTA band (sparks) ---------- */
+        .cta-band { position: relative; padding: 128px 0; overflow: hidden; text-align: center; z-index: 2; }
+        .cta-band-media { position: absolute; inset: 0; z-index: 0; }
+        .cta-band-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+        .cta-band-media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,10,18,0.94), rgba(7,10,18,0.78) 50%, rgba(7,10,18,0.94)); }
+        .cta-band .wrap { position: relative; z-index: 2; }
+        .cta-band h2 { font-size: clamp(34px, 4.6vw, 56px); margin-bottom: 18px; max-width: 760px; margin-left: auto; margin-right: auto; }
+        .cta-band p { color: #c3cde0; font-size: 18px; max-width: 560px; margin: 0 auto 34px; }
+        .cta-band .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
         /* ---------- FAQ ---------- */
-        .faq { max-width: 780px; margin: 0 auto; }
+        .faq { max-width: 800px; margin: 0 auto; }
         .qa { border-bottom: 1px solid var(--line); }
         .qa button { width: 100%; text-align: left; background: none; border: none; cursor: pointer; color: var(--text); font-family: var(--display); font-size: 18px; font-weight: 600; padding: 24px 40px 24px 0; position: relative; }
         .qa button::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 26px; color: var(--blue-lite); transition: transform .3s; font-family: var(--body); }
@@ -201,19 +186,19 @@
         .qa .a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
         .qa .a p { color: var(--muted); font-size: 15px; padding-bottom: 24px; }
 
-        /* ---------- Quote / Contact ---------- */
+        /* ---------- Quote ---------- */
         .quote-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: start; }
         .quote-info h2 { font-size: clamp(30px, 4vw, 44px); margin: 16px 0 16px; }
         .quote-info p { color: var(--muted); font-size: 16px; margin-bottom: 28px; }
         .quote-info .line { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; font-size: 15.5px; }
-        .quote-info .line svg { width: 20px; height: 20px; color: var(--volt); }
+        .quote-info .line svg { width: 20px; height: 20px; color: var(--volt); flex-shrink: 0; }
+        .areas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+        .chip { border: 1px solid var(--line-2); border-radius: 999px; padding: 9px 16px; font-size: 13.5px; color: var(--muted); transition: .2s; }
+        .chip:hover { border-color: var(--blue-lite); color: #fff; }
         form.quote { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 34px; }
         .fld { margin-bottom: 16px; }
         .fld label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 7px; font-weight: 500; }
-        .fld input, .fld select, .fld textarea {
-            width: 100%; background: var(--bg); border: 1px solid var(--line-2); border-radius: 11px;
-            padding: 13px 15px; color: var(--text); font-family: var(--body); font-size: 15px; transition: border-color .2s;
-        }
+        .fld input, .fld select, .fld textarea { width: 100%; background: var(--bg); border: 1px solid var(--line-2); border-radius: 11px; padding: 13px 15px; color: var(--text); font-family: var(--body); font-size: 15px; transition: border-color .2s; }
         .fld input:focus, .fld select:focus, .fld textarea:focus { outline: none; border-color: var(--blue); }
         .fld select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%239aa7c2' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 15px center; }
         .fld-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -227,33 +212,35 @@
         .form-note { font-size: 12.5px; color: var(--muted-2); text-align: center; margin-top: 14px; }
 
         /* ---------- Footer ---------- */
-        footer { background: #070a12; border-top: 1px solid var(--line); padding: 64px 0 30px; }
+        footer { background: #05070d; border-top: 1px solid var(--line); padding: 64px 0 30px; position: relative; z-index: 2; }
         .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
-        .foot-brand p { color: var(--muted); font-size: 14.5px; max-width: 340px; margin-top: 16px; }
-        .foot-col h4 { font-size: 14px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted-2); margin-bottom: 16px; font-family: var(--body); }
+        .foot-brand p { color: var(--muted); font-size: 14.5px; max-width: 340px; margin-top: 18px; }
+        .foot-col h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .12em; color: var(--muted-2); margin-bottom: 16px; font-family: var(--body); }
         .foot-col a, .foot-col p { display: block; color: var(--muted); font-size: 14.5px; margin-bottom: 10px; }
         .foot-col a:hover { color: var(--blue-lite); }
-        .foot-bottom { border-top: 1px solid var(--line); padding-top: 26px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-        .foot-bottom p { font-size: 13px; color: var(--muted-2); }
-        .disclaimer { background: rgba(59,130,246,.07); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; margin-bottom: 36px; }
+        .disclaimer { background: rgba(59,130,246,.06); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; margin-bottom: 36px; }
         .disclaimer p { font-size: 13.5px; color: var(--muted); }
         .disclaimer b { color: var(--blue-lite); }
+        .foot-bottom { border-top: 1px solid var(--line); padding-top: 26px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+        .foot-bottom p { font-size: 13px; color: var(--muted-2); }
+        .foot-bottom a { color: var(--blue-lite); }
 
         /* ---------- Mobile call bar ---------- */
-        .callbar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; display: none; gap: 10px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(10,14,26,.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
+        .callbar { position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; display: none; gap: 10px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(7,10,18,.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); }
         .callbar .btn { flex: 1; padding: 13px; }
 
-        /* ---------- Reveal (progressive enhancement — visible if JS is off) ---------- */
-        .reveal { transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
-        .js .reveal { opacity: 0; transform: translateY(28px); }
+        /* ---------- Reveal ---------- */
+        .reveal { transition: opacity .8s ease, transform .8s cubic-bezier(.22,1,.36,1); }
+        .js .reveal { opacity: 0; transform: translateY(30px); }
         .js .reveal.in { opacity: 1; transform: none; }
 
         /* ---------- Responsive ---------- */
-        @media (max-width: 960px) {
-            .hero-grid { grid-template-columns: 1fr; gap: 44px; }
-            .call-card { max-width: 460px; }
-            .svc-grid, .work-grid, .rev-grid { grid-template-columns: repeat(2, 1fr); }
-            .val-grid { grid-template-columns: repeat(2, 1fr); }
+        @media (max-width: 980px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+            .call-card { max-width: 440px; }
+            .svc-grid, .rev-grid, .show-grid { grid-template-columns: repeat(2, 1fr); }
+            .split { grid-template-columns: 1fr; gap: 40px; }
+            .split-media { aspect-ratio: 16 / 11; max-height: 440px; }
             .quote-grid { grid-template-columns: 1fr; gap: 36px; }
             .foot-grid { grid-template-columns: 1fr 1fr; }
         }
@@ -262,27 +249,29 @@
             .nav-toggle { display: flex; }
             .callbar { display: flex; }
             body { padding-bottom: 74px; }
-            .svc-grid, .work-grid, .rev-grid, .val-grid, .foot-grid { grid-template-columns: 1fr; }
+            .svc-grid, .rev-grid, .show-grid, .val-grid, .foot-grid { grid-template-columns: 1fr; }
             .fld-row { grid-template-columns: 1fr; }
-            .band { padding: 70px 0; }
-            .hero { padding: 140px 0 70px; }
-            .hero-trust { gap: 20px; }
-            .mobile-open { display: flex !important; flex-direction: column; position: absolute; top: 76px; left: 0; right: 0; background: rgba(10,14,26,.97); backdrop-filter: blur(14px); padding: 20px 24px; gap: 18px; border-bottom: 1px solid var(--line); }
+            .band { padding: 74px 0; }
+            .hero { min-height: 92vh; padding: 130px 0 48px; }
+            .trust-strip .wrap { justify-content: flex-start; gap: 18px; }
+            .mobile-open { display: flex !important; flex-direction: column; position: absolute; top: 78px; left: 0; right: 0; background: rgba(7,10,18,.98); backdrop-filter: blur(14px); padding: 20px 28px; gap: 18px; border-bottom: 1px solid var(--line); }
         }
     </style>
 </head>
 <body>
+    <div class="grain"></div>
+
     <!-- Header -->
     <header class="header" id="header">
         <div class="wrap">
             <a href="#top" class="logo">
-                <span class="bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="#fde047"/></svg></span>
-                Volt<b>way</b>
+                <span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 2 4 13.9h5.5L8 22l10.4-11.9H12.9L14.6 2z"/></svg></span>
+                <span class="logo-word">VOLT<span>WAY</span></span>
             </a>
             <nav class="nav-links" id="navLinks">
                 <a href="#services">Services</a>
                 <a href="#why">Why Us</a>
-                <a href="#work">Recent Work</a>
+                <a href="#work">Our Work</a>
                 <a href="#reviews">Reviews</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -298,7 +287,10 @@
 
     <!-- Hero -->
     <section class="hero" id="top">
-        <div class="hero-bg"><div class="grid-lines"></div></div>
+        <div class="hero-media">
+            <img src="assets/img/hero-electrician.jpg" alt="Licensed Voltway electrician working on a switchboard">
+        </div>
+        <div class="hero-spark"></div>
         <div class="wrap">
             <div class="hero-grid">
                 <div>
@@ -318,26 +310,34 @@
                         <div class="t"><b>24 / 7</b><span>Emergency callouts</span></div>
                     </div>
                 </div>
-                <div>
-                    <div class="call-card">
-                        <span class="badge"><span class="live"></span> Electricians on call now</span>
-                        <h3>Power emergency?</h3>
-                        <div class="num">(08) 6555 0100</div>
-                        <div class="sub">Metro-wide · 7 days · no fix, no fee callout</div>
-                        <div class="rows">
-                            <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Licensed & fully insured</div>
-                            <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Fixed-price quote before we start</div>
-                            <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Workmanship guarantee on every job</div>
-                        </div>
-                        <a href="#contact" class="btn btn-volt">Book an electrician</a>
+                <div class="call-card">
+                    <span class="badge"><span class="live"></span> Electricians on call now</span>
+                    <h3>Power emergency?</h3>
+                    <div class="num">(08) 6555 0100</div>
+                    <div class="sub">Metro-wide · 7 days · no fix, no fee callout</div>
+                    <div class="rows">
+                        <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Licensed & fully insured</div>
+                        <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Fixed-price quote before we start</div>
+                        <div class="row"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Workmanship guarantee on every job</div>
                     </div>
+                    <a href="#contact" class="btn btn-volt">Book an electrician</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Trust strip -->
+    <div class="trust-strip">
+        <div class="wrap">
+            <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg> Fully licensed & insured</div>
+            <div class="item"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg> On-site within 60 minutes</div>
+            <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg> Fixed prices, no surprises</div>
+            <div class="item"><svg viewBox="0 0 24 24" fill="none"><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/></svg> Workmanship guaranteed</div>
+        </div>
+    </div>
+
     <!-- Services -->
-    <section class="band band-alt" id="services">
+    <section class="band" id="services">
         <div class="wrap">
             <div class="sec-head reveal">
                 <span class="eyebrow"><span class="dot"></span> What we do</span>
@@ -379,61 +379,59 @@
         </div>
     </section>
 
-    <!-- Why -->
-    <section class="band" id="why">
+    <!-- Why (split) -->
+    <section class="band band-alt" id="why">
         <div class="wrap">
-            <div class="sec-head reveal">
-                <span class="eyebrow"><span class="dot"></span> Why Voltway</span>
-                <h2>The electrician you'd recommend to your mum.</h2>
-            </div>
-            <div class="val-grid">
-                <div class="val reveal"><span class="n">01</span><h3>Rapid Response</h3><p>On-site within 60 minutes across the metro. Your power problem is our emergency too — no waiting around all day for a window.</p></div>
-                <div class="val reveal"><span class="n">02</span><h3>Upfront Pricing</h3><p>A fixed quote before we lift a tool. No hourly surprises, no call-out shock — you know the number before we start.</p></div>
-                <div class="val reveal"><span class="n">03</span><h3>Licensed & Insured</h3><p>Every job wired to AS/NZS 3000. Fully licensed electricians, fully insured, fully compliant — and we prove it.</p></div>
-                <div class="val reveal"><span class="n">04</span><h3>Guaranteed Work</h3><p>A workmanship warranty on everything we touch. If it's not right, we come back and fix it — no charge, no fuss.</p></div>
+            <div class="split">
+                <div class="split-media reveal">
+                    <img src="assets/img/electrician-portrait.jpg" alt="A licensed Voltway electrician on site">
+                    <div class="split-badge">
+                        <span class="bignum">12+</span>
+                        <span>years wiring<br>Perth homes</span>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <span class="eyebrow"><span class="dot"></span> Why Voltway</span>
+                    <h2 class="sec-head" style="margin-bottom:8px; font-size:clamp(30px,4vw,46px)">The electrician you'd recommend to your mum.</h2>
+                    <p style="color:var(--muted); font-size:16px; max-width:520px;">No mess, no jargon, no nasty invoice at the end. Just licensed electricians who turn up when they say they will and leave the job spotless.</p>
+                    <div class="val-grid">
+                        <div class="val"><span class="n">01</span><h3>Rapid Response</h3><p>On-site within 60 minutes across the metro — your power problem is our emergency too.</p></div>
+                        <div class="val"><span class="n">02</span><h3>Upfront Pricing</h3><p>A fixed quote before we lift a tool. No hourly surprises, no call-out shock.</p></div>
+                        <div class="val"><span class="n">03</span><h3>Licensed & Insured</h3><p>Every job wired to AS/NZS 3000 by fully licensed, fully insured electricians.</p></div>
+                        <div class="val"><span class="n">04</span><h3>Guaranteed Work</h3><p>A workmanship warranty on everything. If it's not right, we fix it — no charge.</p></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Work -->
-    <section class="band band-alt" id="work">
+    <!-- Work showcase -->
+    <section class="band" id="work">
         <div class="wrap">
             <div class="sec-head reveal">
-                <span class="eyebrow"><span class="dot"></span> Recent work</span>
-                <h2>A week in the life around Perth.</h2>
-                <p>A snapshot of the kind of work Voltway takes on, from the northern suburbs down to Fremantle.</p>
+                <span class="eyebrow"><span class="dot"></span> Our work</span>
+                <h2>What we get called for most.</h2>
+                <p>A snapshot of the jobs Voltway takes on across Perth — from 9pm emergencies to full solar upgrades.</p>
             </div>
-            <div class="work-grid">
-                <div class="job reveal">
-                    <div class="top"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-                    <div class="body"><span class="tag">Switchboard</span><h3>Fuse box → safety board</h3><p>Replaced a 1980s ceramic fuse box with a modern RCD-protected board.</p><div class="meta"><span>Scarborough</span><span>Half-day job</span></div></div>
+            <div class="show-grid">
+                <div class="show-tile reveal">
+                    <img src="assets/img/work-emergency.jpg" alt="Electrician repairing a switchboard">
+                    <div class="cap"><span class="tag">Emergency & Switchboards</span><h3>Faults fixed fast</h3><p>Dead circuits, tripping boards and fuse-box upgrades — traced, repaired and made safe, often the same day.</p></div>
                 </div>
-                <div class="job reveal">
-                    <div class="top"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6 4.5 4.5M18 18l1.5 1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-                    <div class="body"><span class="tag">Solar + Battery</span><h3>6.6kW solar & 10kWh battery</h3><p>Rooftop array plus battery storage with a phone-app monitoring setup.</p><div class="meta"><span>Duncraig</span><span>2 days</span></div></div>
+                <div class="show-tile reveal">
+                    <img src="assets/img/work-solar.jpg" alt="Rooftop solar panel installation">
+                    <div class="cap"><span class="tag">Solar & Battery</span><h3>Power your own way</h3><p>Panel and battery systems sized to your bills, installed clean and monitored from your phone.</p></div>
                 </div>
-                <div class="job reveal">
-                    <div class="top"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="13" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 9h3l2 3v5h-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                    <div class="body"><span class="tag">EV Charger</span><h3>Home wall charger install</h3><p>7kW Type 2 charger wired from the board with a dedicated circuit.</p><div class="meta"><span>Mount Lawley</span><span>3 hours</span></div></div>
-                </div>
-                <div class="job reveal">
-                    <div class="top"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-                    <div class="body"><span class="tag">Emergency</span><h3>After-hours fault repair</h3><p>Traced and fixed a dead circuit that had tripped the whole house at 9pm.</p><div class="meta"><span>Fremantle</span><span>Same night</span></div></div>
-                </div>
-                <div class="job reveal">
-                    <div class="top"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                    <div class="body"><span class="tag">Lighting</span><h3>Whole-home LED refit</h3><p>Swapped 30 halogens for dimmable LED downlights across a full reno.</p><div class="meta"><span>Subiaco</span><span>1 day</span></div></div>
-                </div>
-                <div class="job reveal">
-                    <div class="top"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                    <div class="body"><span class="tag">Compliance</span><h3>Rental safety inspection</h3><p>Full electrical & smoke-alarm compliance check with a signed certificate.</p><div class="meta"><span>Joondalup</span><span>90 mins</span></div></div>
+                <div class="show-tile reveal">
+                    <img src="assets/img/work-ev.jpg" alt="Electric vehicle home charger">
+                    <div class="cap"><span class="tag">EV Chargers</span><h3>Charge at home</h3><p>Dedicated home chargers for every EV, wired safely from the board and ready overnight.</p></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Reviews -->
-    <section class="band" id="reviews">
+    <section class="band band-alt" id="reviews">
         <div class="wrap">
             <div class="sec-head center reveal">
                 <span class="eyebrow" style="justify-content:center"><span class="dot"></span> What locals say</span>
@@ -460,8 +458,21 @@
         </div>
     </section>
 
+    <!-- CTA band -->
+    <section class="cta-band">
+        <div class="cta-band-media"><img src="assets/img/sparks.jpg" alt=""></div>
+        <div class="wrap">
+            <h2>Power's out? We're already on our way.</h2>
+            <p>Real electricians, answering the phone 24/7 across the Perth metro. Get a fixed-price quote or an emergency callout now.</p>
+            <div class="actions">
+                <a href="tel:0865550100" class="btn btn-volt">Call (08) 6555 0100</a>
+                <a href="#contact" class="btn btn-ghost">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ -->
-    <section class="band band-alt">
+    <section class="band">
         <div class="wrap">
             <div class="sec-head center reveal">
                 <span class="eyebrow" style="justify-content:center"><span class="dot"></span> Good to know</span>
@@ -477,7 +488,7 @@
     </section>
 
     <!-- Contact / Quote -->
-    <section class="band" id="contact">
+    <section class="band band-alt" id="contact">
         <div class="wrap">
             <div class="quote-grid">
                 <div class="quote-info reveal">
@@ -534,8 +545,8 @@
             <div class="foot-grid">
                 <div class="foot-brand">
                     <a href="#top" class="logo">
-                        <span class="bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="#fde047"/></svg></span>
-                        Volt<b>way</b>
+                        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 2 4 13.9h5.5L8 22l10.4-11.9H12.9L14.6 2z"/></svg></span>
+                        <span class="logo-word">VOLT<span>WAY</span></span>
                     </a>
                     <p>Perth's rapid-response electricians — a concept build showing how a modern trade website should look, feel and convert.</p>
                 </div>
@@ -550,7 +561,7 @@
                 <div class="foot-col">
                     <h4>Voltway</h4>
                     <a href="#why">Why Us</a>
-                    <a href="#work">Recent Work</a>
+                    <a href="#work">Our Work</a>
                     <a href="#reviews">Reviews</a>
                     <a href="#contact">Get a Quote</a>
                     <a href="/">Built by AmplifyX ↗</a>
@@ -558,7 +569,7 @@
             </div>
             <div class="foot-bottom">
                 <p>© <span id="year">2026</span> Voltway Electrical — a fictional concept build.</p>
-                <p>Designed & built by <a href="/" style="color:var(--blue-lite)">AmplifyX Solutions</a></p>
+                <p>Designed & built by <a href="/">AmplifyX Solutions</a></p>
             </div>
         </div>
     </footer>
@@ -570,25 +581,21 @@
     </div>
 
     <script>
-        // Header scroll state
         const header = document.getElementById('header');
         const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
 
-        // Mobile nav
         const toggle = document.getElementById('navToggle');
         const links = document.getElementById('navLinks');
         toggle.addEventListener('click', () => links.classList.toggle('mobile-open'));
         links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('mobile-open')));
 
-        // Reveal on scroll
         const io = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
         }, { threshold: 0.12, rootMargin: '-40px' });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-        // FAQ accordion
         document.querySelectorAll('.qa button').forEach(btn => {
             btn.addEventListener('click', () => {
                 const qa = btn.parentElement;
@@ -598,22 +605,17 @@
             });
         });
 
-        // Quote form
         const form = document.getElementById('quoteForm');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('q-name');
             const phone = document.getElementById('q-phone');
-            if (!name.value.trim() || !phone.value.trim()) {
-                (!name.value.trim() ? name : phone).focus();
-                return;
-            }
+            if (!name.value.trim() || !phone.value.trim()) { (!name.value.trim() ? name : phone).focus(); return; }
             form.style.display = 'none';
             document.getElementById('formOk').classList.add('show');
             document.getElementById('formOk').scrollIntoView({ behavior: 'smooth', block: 'center' });
         });
 
-        // Year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
