@@ -782,6 +782,8 @@ input, textarea {
     padding: 40px;
     position: relative;
     transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
 }
 
 .process-card:hover {
@@ -832,6 +834,7 @@ input, textarea {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-top: auto;
 }
 
 .tag {
@@ -2103,6 +2106,7 @@ input, textarea {
     font-weight: 800;
     color: var(--color-black);
     margin-bottom: 12px;
+    text-align: center;
 }
 
 .pricing-card-featured .pricing-title {
@@ -2113,6 +2117,7 @@ input, textarea {
     font-size: 15px;
     color: var(--color-gray-600);
     margin-bottom: 32px;
+    text-align: center;
 }
 
 .pricing-card-featured .pricing-subtitle {
@@ -2146,6 +2151,7 @@ input, textarea {
 .pricing-price {
     display: flex;
     align-items: baseline;
+    justify-content: center;
     gap: 8px;
     margin-top: auto;
     margin-bottom: 8px;
@@ -2185,6 +2191,7 @@ input, textarea {
     font-size: 14px;
     color: var(--color-gray-500);
     margin-bottom: 24px;
+    text-align: center;
 }
 
 .pricing-card-featured .pricing-note {
