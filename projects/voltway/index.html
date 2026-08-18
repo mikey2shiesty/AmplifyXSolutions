@@ -116,13 +116,19 @@
         .trust-strip .item svg { width: 20px; height: 20px; color: var(--green); }
 
         /* Services */
-        .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .svc { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 32px; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
-        .svc:hover { transform: translateY(-6px); border-color: var(--line-2); background: var(--card-2); }
-        .svc .ic { width: 54px; height: 54px; border-radius: 14px; background: var(--grad-soft); display: grid; place-items: center; margin-bottom: 22px; }
-        .svc .ic svg { width: 26px; height: 26px; color: var(--green-lite); }
-        .svc h3 { font-family: var(--display); font-weight: 700; font-size: 20px; margin-bottom: 10px; letter-spacing: -0.01em; }
-        .svc p { color: var(--muted); font-size: 14.5px; }
+        .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; background: var(--card); }
+        .svc { position: relative; padding: 40px 34px 36px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .3s ease; overflow: hidden; }
+        .svc:nth-child(3n) { border-right: none; }
+        .svc:nth-last-child(-n+3) { border-bottom: none; }
+        .svc:hover { background: var(--card-2); }
+        .svc-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 26px; }
+        .svc-num { font-family: var(--poster); font-size: 46px; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: 0.01em; }
+        .svc-ic { width: 30px; height: 30px; color: var(--muted-2); opacity: .55; transition: color .3s ease, opacity .3s ease; flex-shrink: 0; margin-top: 6px; }
+        .svc:hover .svc-ic { color: var(--green-lite); opacity: 1; }
+        .svc h3 { font-family: var(--display); font-weight: 700; font-size: 20px; margin-bottom: 10px; letter-spacing: -0.01em; color: #fff; }
+        .svc p { color: var(--muted); font-size: 14.5px; line-height: 1.6; max-width: 34ch; }
+        .svc::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 0; background: var(--grad); transition: width .35s ease; }
+        .svc:hover::after { width: 100%; }
 
         /* Split (Why) */
         .split { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 60px; align-items: center; }
@@ -229,6 +235,11 @@
             .hero-bolt svg { max-width: 240px; }
             .hero h1 { font-size: clamp(52px, 13vw, 96px); }
             .svc-grid, .rev-grid, .show-grid { grid-template-columns: repeat(2, 1fr); }
+            .svc { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+            .svc:nth-child(3n) { border-right: 1px solid var(--line); }
+            .svc:nth-child(2n) { border-right: none; }
+            .svc:nth-last-child(-n+3) { border-bottom: 1px solid var(--line); }
+            .svc:nth-last-child(-n+2) { border-bottom: none; }
             .split { grid-template-columns: 1fr; gap: 40px; }
             .split-media { aspect-ratio: 16 / 11; max-height: 440px; }
             .quote-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -240,6 +251,8 @@
             .callbar { display: flex; }
             body { padding-bottom: 74px; }
             .svc-grid, .rev-grid, .show-grid, .val-grid, .foot-grid { grid-template-columns: 1fr; }
+            .svc { border-right: none !important; border-bottom: 1px solid var(--line); }
+            .svc:last-child { border-bottom: none; }
             .fld-row { grid-template-columns: 1fr; }
             .band { padding: 76px 0; }
             .hero { min-height: auto; padding: 120px 0 60px; }
@@ -332,32 +345,50 @@
             </div>
             <div class="svc-grid">
                 <div class="svc reveal">
-                    <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></div>
+                    <div class="svc-top">
+                        <span class="svc-num poster">01</span>
+                        <svg class="svc-ic" viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+                    </div>
                     <h3>24/7 Emergency Callouts</h3>
                     <p>Power outages, blown circuits, burning smells or sparking outlets — we're there fast, day or night, every day of the year.</p>
                 </div>
                 <div class="svc reveal">
-                    <div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+                    <div class="svc-top">
+                        <span class="svc-num poster">02</span>
+                        <svg class="svc-ic" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                    </div>
                     <h3>Switchboard Upgrades</h3>
                     <p>Swap that old fuse box for a modern board with safety switches (RCDs) — the single biggest safety upgrade for any Perth home.</p>
                 </div>
                 <div class="svc reveal">
-                    <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6 4.5 4.5M19.5 19.5 18 18M18 6l1.5-1.5M4.5 19.5 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/></svg></div>
+                    <div class="svc-top">
+                        <span class="svc-num poster">03</span>
+                        <svg class="svc-ic" viewBox="0 0 24 24" fill="none"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M6 6 4.5 4.5M19.5 19.5 18 18M18 6l1.5-1.5M4.5 19.5 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/></svg>
+                    </div>
                     <h3>Solar & Battery</h3>
                     <p>Panel installs, battery storage and monitoring, sized to your roof and your bills — cut your power costs and store what you make.</p>
                 </div>
                 <div class="svc reveal">
-                    <div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="13" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M16 9h3l2 3v5a1 1 0 0 1-1 1h-1M8 12l2-3M10 9l-1 6 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="svc-top">
+                        <span class="svc-num poster">04</span>
+                        <svg class="svc-ic" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="13" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M16 9h3l2 3v5a1 1 0 0 1-1 1h-1M8 12l2-3M10 9l-1 6 3-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                     <h3>EV Charger Installation</h3>
                     <p>Home chargers for every make — Tesla, universal Type 2 and beyond — installed safely and ready to fill up overnight.</p>
                 </div>
                 <div class="svc reveal">
-                    <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="svc-top">
+                        <span class="svc-num poster">05</span>
+                        <svg class="svc-ic" viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                     <h3>Lighting & Renovations</h3>
                     <p>LED downlights, outdoor and feature lighting, extra power points, and full rewiring for renos and extensions.</p>
                 </div>
                 <div class="svc reveal">
-                    <div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="svc-top">
+                        <span class="svc-num poster">06</span>
+                        <svg class="svc-ic" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
                     <h3>Safety Inspections</h3>
                     <p>Pre-purchase checks, landlord compliance certificates and smoke-alarm testing — peace of mind, properly documented.</p>
                 </div>
